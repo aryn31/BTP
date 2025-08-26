@@ -1,0 +1,101 @@
+EncounterID,PatientID,Date,Notes
+E1373,1,2024-04-27,Routine check-up. CBC normal. No medication prescribed.
+E2676,2,2023-01-22,Routine check-up. CBC normal. No medication prescribed.
+E3738,3,2021-03-03,Patient with diabetes. HbA1c recorded at 6.8%. Prescribed Metformin.
+E4248,4,2020-11-06,Respiratory issues noted. Spirometry shows FEV1 at 71%. Prescribed inhaler.
+E5533,5,2020-12-24,Patient with diabetes. HbA1c recorded at 8.6%. Prescribed Metformin.
+E6470,6,2021-09-13,Elderly patient with mild hypertension (BP 148/87). Lifestyle modifications advised.
+E7188,7,2023-10-22,Routine check-up. CBC normal. No medication prescribed.
+E8315,8,2021-12-28,Elderly patient with mild hypertension (BP 144/91). Lifestyle modifications advised.
+E9103,9,2024-11-27,Patient with diabetes. HbA1c recorded at 8.0%. Prescribed Metformin.
+E10949,10,2025-08-03,Patient with diabetes. HbA1c recorded at 6.7%. Prescribed Metformin.
+E11748,11,2021-11-13,Patient with cardiac history. Cholesterol measured at 251 mg/dL. Started Atorvastatin.
+E12516,12,2023-11-28,Respiratory issues noted. Spirometry shows FEV1 at 73%. Prescribed inhaler.
+E13562,13,2020-09-06,Elderly patient with mild hypertension (BP 149/93). Lifestyle modifications advised.
+E14932,14,2025-07-14,Obese patient with elevated blood pressure. Prescribed Amlodipine.
+E15510,15,2021-10-24,Obese patient with elevated blood pressure. Prescribed Amlodipine.
+E16279,16,2020-10-08,Respiratory issues noted. Spirometry shows FEV1 at 79%. Prescribed inhaler.
+E17284,17,2025-06-02,Respiratory issues noted. Spirometry shows FEV1 at 72%. Prescribed inhaler.
+E18697,18,2023-08-01,Elderly patient with mild hypertension (BP 149/95). Lifestyle modifications advised.
+E19213,19,2023-05-17,Respiratory issues noted. Spirometry shows FEV1 at 80%. Prescribed inhaler.
+E20336,20,2020-10-04,Obese patient with elevated blood pressure. Prescribed Amlodipine.
+E21649,21,2024-08-24,Patient with cardiac history. Cholesterol measured at 228 mg/dL. Started Atorvastatin.
+E22764,22,2023-05-09,Elderly patient with mild hypertension (BP 139/85). Lifestyle modifications advised.
+E23465,23,2025-07-01,Obese patient with elevated blood pressure. Prescribed Amlodipine.
+E24911,24,2022-04-02,Elderly patient with mild hypertension (BP 147/93). Lifestyle modifications advised.
+E25113,25,2021-05-13,Patient with diabetes. HbA1c recorded at 8.9%. Prescribed Metformin.
+E26987,26,2021-10-23,Obese patient with elevated blood pressure. Prescribed Amlodipine.
+E27138,27,2024-04-02,Obese patient with elevated blood pressure. Prescribed Amlodipine.
+E28284,28,2024-04-02,Obese patient with elevated blood pressure. Prescribed Amlodipine.
+E29370,29,2024-12-15,Elderly patient with mild hypertension (BP 139/85). Lifestyle modifications advised.
+E30319,30,2024-06-07,Routine check-up. CBC normal. No medication prescribed.
+E31543,31,2022-09-04,Elderly patient with mild hypertension (BP 136/95). Lifestyle modifications advised.
+E32818,32,2024-04-26,Elderly patient with mild hypertension (BP 142/93). Lifestyle modifications advised.
+E33717,33,2022-12-15,Respiratory issues noted. Spirometry shows FEV1 at 79%. Prescribed inhaler.
+E34843,34,2024-03-15,Patient with diabetes. HbA1c recorded at 7.8%. Prescribed Metformin.
+E35849,35,2022-05-18,Elderly patient with mild hypertension (BP 149/87). Lifestyle modifications advised.
+E36469,36,2020-10-27,Patient with cardiac history. Cholesterol measured at 210 mg/dL. Started Atorvastatin.
+E37434,37,2024-03-04,Respiratory issues noted. Spirometry shows FEV1 at 69%. Prescribed inhaler.
+E38577,38,2023-03-16,Elderly patient with mild hypertension (BP 150/92). Lifestyle modifications advised.
+E39171,39,2022-07-18,Routine check-up. CBC normal. No medication prescribed.
+E40886,40,2023-10-13,Respiratory issues noted. Spirometry shows FEV1 at 74%. Prescribed inhaler.
+E41546,41,2025-08-11,Patient with cardiac history. Cholesterol measured at 235 mg/dL. Started Atorvastatin.
+E42233,42,2022-05-16,Obese patient with elevated blood pressure. Prescribed Amlodipine.
+E43775,43,2022-10-12,Patient with cardiac history. Cholesterol measured at 243 mg/dL. Started Atorvastatin.
+E44627,44,2024-02-25,Obese patient with elevated blood pressure. Prescribed Amlodipine.
+E45224,45,2023-11-14,Respiratory issues noted. Spirometry shows FEV1 at 66%. Prescribed inhaler.
+E46925,46,2025-08-14,Obese patient with elevated blood pressure. Prescribed Amlodipine.
+E47149,47,2020-05-21,Routine check-up. CBC normal. No medication prescribed.
+E48165,48,2022-01-26,Routine check-up. CBC normal. No medication prescribed.
+E49234,49,2022-04-16,Routine check-up. CBC normal. No medication prescribed.
+E50338,50,2020-11-30,Patient with cardiac history. Cholesterol measured at 217 mg/dL. Started Atorvastatin.
+E51724,51,2021-11-19,Elderly patient with mild hypertension (BP 140/89). Lifestyle modifications advised.
+E52322,52,2020-02-16,Patient with diabetes. HbA1c recorded at 8.2%. Prescribed Metformin.
+E53423,53,2024-11-07,Elderly patient with mild hypertension (BP 136/85). Lifestyle modifications advised.
+E54999,54,2024-08-22,Patient with cardiac history. Cholesterol measured at 211 mg/dL. Started Atorvastatin.
+E55682,55,2025-06-18,Obese patient with elevated blood pressure. Prescribed Amlodipine.
+E56498,56,2021-03-10,Elderly patient with mild hypertension (BP 137/91). Lifestyle modifications advised.
+E57932,57,2024-02-22,Patient with cardiac history. Cholesterol measured at 248 mg/dL. Started Atorvastatin.
+E58299,58,2023-07-16,Patient with diabetes. HbA1c recorded at 8.3%. Prescribed Metformin.
+E59470,59,2021-05-18,Obese patient with elevated blood pressure. Prescribed Amlodipine.
+E60668,60,2021-02-26,Obese patient with elevated blood pressure. Prescribed Amlodipine.
+E61614,61,2024-11-25,Respiratory issues noted. Spirometry shows FEV1 at 71%. Prescribed inhaler.
+E62401,62,2020-02-12,Elderly patient with mild hypertension (BP 145/86). Lifestyle modifications advised.
+E63133,63,2022-04-01,Patient with cardiac history. Cholesterol measured at 268 mg/dL. Started Atorvastatin.
+E64200,64,2020-06-27,Patient with cardiac history. Cholesterol measured at 245 mg/dL. Started Atorvastatin.
+E65961,65,2025-07-18,Patient with cardiac history. Cholesterol measured at 255 mg/dL. Started Atorvastatin.
+E66654,66,2023-05-14,Patient with cardiac history. Cholesterol measured at 202 mg/dL. Started Atorvastatin.
+E67833,67,2021-11-26,Patient with diabetes. HbA1c recorded at 6.8%. Prescribed Metformin.
+E68519,68,2024-01-12,Elderly patient with mild hypertension (BP 141/88). Lifestyle modifications advised.
+E69482,69,2020-01-13,Obese patient with elevated blood pressure. Prescribed Amlodipine.
+E70696,70,2020-04-01,Patient with cardiac history. Cholesterol measured at 218 mg/dL. Started Atorvastatin.
+E71440,71,2025-07-25,Patient with cardiac history. Cholesterol measured at 254 mg/dL. Started Atorvastatin.
+E72574,72,2024-12-12,Patient with cardiac history. Cholesterol measured at 262 mg/dL. Started Atorvastatin.
+E73813,73,2024-07-16,Respiratory issues noted. Spirometry shows FEV1 at 70%. Prescribed inhaler.
+E74269,74,2020-11-09,Routine check-up. CBC normal. No medication prescribed.
+E75273,75,2022-12-16,Respiratory issues noted. Spirometry shows FEV1 at 74%. Prescribed inhaler.
+E76176,76,2025-05-14,Patient with cardiac history. Cholesterol measured at 262 mg/dL. Started Atorvastatin.
+E77793,77,2020-07-28,Patient with cardiac history. Cholesterol measured at 200 mg/dL. Started Atorvastatin.
+E78180,78,2021-01-25,Obese patient with elevated blood pressure. Prescribed Amlodipine.
+E79528,79,2024-12-23,Patient with cardiac history. Cholesterol measured at 248 mg/dL. Started Atorvastatin.
+E80795,80,2023-08-12,Patient with diabetes. HbA1c recorded at 6.8%. Prescribed Metformin.
+E81442,81,2022-11-07,Obese patient with elevated blood pressure. Prescribed Amlodipine.
+E82995,82,2021-09-01,Routine check-up. CBC normal. No medication prescribed.
+E83539,83,2022-05-03,Patient with diabetes. HbA1c recorded at 8.5%. Prescribed Metformin.
+E84466,84,2025-05-21,Routine check-up. CBC normal. No medication prescribed.
+E85850,85,2023-11-09,Obese patient with elevated blood pressure. Prescribed Amlodipine.
+E86599,86,2022-12-17,Routine check-up. CBC normal. No medication prescribed.
+E87283,87,2025-04-15,Elderly patient with mild hypertension (BP 142/94). Lifestyle modifications advised.
+E88702,88,2022-06-01,Respiratory issues noted. Spirometry shows FEV1 at 66%. Prescribed inhaler.
+E89165,89,2024-06-30,Patient with cardiac history. Cholesterol measured at 223 mg/dL. Started Atorvastatin.
+E90649,90,2024-09-05,Patient with diabetes. HbA1c recorded at 9.1%. Prescribed Metformin.
+E91181,91,2024-01-07,Patient with diabetes. HbA1c recorded at 7.2%. Prescribed Metformin.
+E92894,92,2024-03-17,Patient with cardiac history. Cholesterol measured at 234 mg/dL. Started Atorvastatin.
+E93214,93,2025-06-21,Routine check-up. CBC normal. No medication prescribed.
+E94459,94,2021-12-18,Obese patient with elevated blood pressure. Prescribed Amlodipine.
+E95726,95,2022-03-08,Obese patient with elevated blood pressure. Prescribed Amlodipine.
+E96124,96,2023-09-09,Routine check-up. CBC normal. No medication prescribed.
+E97219,97,2023-10-28,Routine check-up. CBC normal. No medication prescribed.
+E98635,98,2022-05-12,Obese patient with elevated blood pressure. Prescribed Amlodipine.
+E99558,99,2024-02-15,Patient with diabetes. HbA1c recorded at 7.3%. Prescribed Metformin.
+E100646,100,2023-08-10,Obese patient with elevated blood pressure. Prescribed Amlodipine.

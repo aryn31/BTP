@@ -1,0 +1,144 @@
+PatientID,Condition,YearDiagnosed,Status
+3,Diabetes,2015,Ongoing
+4,Asthma,2005,Recovered
+5,Diabetes,2000,Recovered
+6,Hypertension,2015,Ongoing
+6,Arthritis,2021,Recovered
+8,Hypertension,2017,Ongoing
+8,Arthritis,2020,Recovered
+9,Diabetes,2003,Ongoing
+10,Diabetes,2004,Recovered
+11,Heart Disease,2021,Ongoing
+11,Hypertension,2002,Ongoing
+12,Asthma,2011,Ongoing
+13,Hypertension,2022,Ongoing
+13,Arthritis,2013,Recovered
+14,Hypertension,2017,Recovered
+14,Diabetes,2003,Recovered
+15,Hypertension,2010,Ongoing
+15,Diabetes,2016,Recovered
+16,Asthma,2009,Recovered
+17,Asthma,2003,Recovered
+18,Hypertension,2021,Ongoing
+18,Arthritis,2004,Ongoing
+19,Asthma,2006,Ongoing
+20,Hypertension,2000,Recovered
+20,Diabetes,2022,Recovered
+21,Heart Disease,2001,Ongoing
+21,Hypertension,2010,Recovered
+22,Hypertension,2012,Recovered
+22,Arthritis,2006,Recovered
+23,Hypertension,2011,Ongoing
+23,Diabetes,2016,Ongoing
+24,Hypertension,2006,Recovered
+24,Arthritis,2014,Ongoing
+25,Diabetes,2002,Ongoing
+26,Hypertension,2001,Recovered
+26,Diabetes,2005,Ongoing
+27,Hypertension,2017,Ongoing
+27,Diabetes,2004,Ongoing
+28,Hypertension,2006,Recovered
+28,Diabetes,2021,Recovered
+29,Hypertension,2010,Recovered
+29,Arthritis,2010,Recovered
+31,Hypertension,2003,Recovered
+31,Arthritis,2020,Recovered
+32,Hypertension,2001,Ongoing
+32,Arthritis,2019,Recovered
+33,Asthma,2009,Ongoing
+34,Diabetes,2005,Ongoing
+35,Hypertension,2019,Ongoing
+35,Arthritis,2022,Ongoing
+36,Heart Disease,2001,Ongoing
+36,Hypertension,2005,Ongoing
+37,Asthma,2008,Ongoing
+38,Hypertension,2016,Recovered
+38,Arthritis,2021,Recovered
+40,Asthma,2013,Recovered
+41,Heart Disease,2017,Ongoing
+41,Hypertension,2021,Ongoing
+42,Hypertension,2007,Recovered
+42,Diabetes,2010,Ongoing
+43,Heart Disease,2010,Recovered
+43,Hypertension,2003,Ongoing
+44,Hypertension,2000,Recovered
+44,Diabetes,2003,Ongoing
+45,Asthma,2002,Recovered
+46,Hypertension,2014,Recovered
+46,Diabetes,2020,Ongoing
+50,Heart Disease,2016,Recovered
+50,Hypertension,2008,Ongoing
+51,Hypertension,2020,Ongoing
+51,Arthritis,2000,Ongoing
+52,Diabetes,2011,Recovered
+53,Hypertension,2002,Ongoing
+53,Arthritis,2018,Recovered
+54,Heart Disease,2021,Ongoing
+54,Hypertension,2019,Ongoing
+55,Hypertension,2012,Ongoing
+55,Diabetes,2012,Recovered
+56,Hypertension,2003,Ongoing
+56,Arthritis,2016,Recovered
+57,Heart Disease,2015,Ongoing
+57,Hypertension,2019,Ongoing
+58,Diabetes,2011,Recovered
+59,Hypertension,2009,Recovered
+59,Diabetes,2021,Ongoing
+60,Hypertension,2016,Recovered
+60,Diabetes,2012,Recovered
+61,Asthma,2009,Ongoing
+62,Hypertension,2006,Recovered
+62,Arthritis,2008,Ongoing
+63,Heart Disease,2003,Ongoing
+63,Hypertension,2018,Ongoing
+64,Heart Disease,2003,Recovered
+64,Hypertension,2008,Recovered
+65,Heart Disease,2014,Ongoing
+65,Hypertension,2022,Recovered
+66,Heart Disease,2013,Ongoing
+66,Hypertension,2021,Recovered
+67,Diabetes,2021,Recovered
+68,Hypertension,2001,Recovered
+68,Arthritis,2002,Ongoing
+69,Hypertension,2013,Recovered
+69,Diabetes,2017,Ongoing
+70,Heart Disease,2018,Ongoing
+70,Hypertension,2009,Ongoing
+71,Heart Disease,2003,Ongoing
+71,Hypertension,2011,Ongoing
+72,Heart Disease,2006,Recovered
+72,Hypertension,2008,Ongoing
+73,Asthma,2004,Ongoing
+75,Asthma,2005,Recovered
+76,Heart Disease,2021,Ongoing
+76,Hypertension,2014,Ongoing
+77,Heart Disease,2008,Recovered
+77,Hypertension,2017,Recovered
+78,Hypertension,2007,Ongoing
+78,Diabetes,2003,Recovered
+79,Heart Disease,2005,Recovered
+79,Hypertension,2006,Ongoing
+80,Diabetes,2008,Recovered
+81,Hypertension,2001,Recovered
+81,Diabetes,2002,Recovered
+83,Diabetes,2022,Recovered
+85,Hypertension,2007,Recovered
+85,Diabetes,2018,Ongoing
+87,Hypertension,2021,Ongoing
+87,Arthritis,2003,Recovered
+88,Asthma,2018,Ongoing
+89,Heart Disease,2014,Ongoing
+89,Hypertension,2006,Recovered
+90,Diabetes,2021,Ongoing
+91,Diabetes,2012,Ongoing
+92,Heart Disease,2002,Recovered
+92,Hypertension,2021,Ongoing
+94,Hypertension,2003,Ongoing
+94,Diabetes,2016,Ongoing
+95,Hypertension,2018,Recovered
+95,Diabetes,2005,Recovered
+98,Hypertension,2000,Ongoing
+98,Diabetes,2008,Ongoing
+99,Diabetes,2020,Recovered
+100,Hypertension,2016,Ongoing
+100,Diabetes,2006,Ongoing

@@ -1,0 +1,101 @@
+EncounterID,TestName,Result,Unit,NormalRange
+E1373,CBC,Normal,,Normal
+E2676,CBC,Normal,,Normal
+E3738,HbA1c,6.8,%,<5.7
+E4248,Spirometry,71,%,>80
+E5533,HbA1c,8.6,%,<5.7
+E6470,Blood Pressure,148/87,mmHg,120/80
+E7188,CBC,Normal,,Normal
+E8315,Blood Pressure,144/91,mmHg,120/80
+E9103,HbA1c,8.0,%,<5.7
+E10949,HbA1c,6.7,%,<5.7
+E11748,Cholesterol,251,mg/dL,<200
+E12516,Spirometry,73,%,>80
+E13562,Blood Pressure,149/93,mmHg,120/80
+E14932,Blood Pressure,145/95,mmHg,120/80
+E15510,Blood Pressure,145/95,mmHg,120/80
+E16279,Spirometry,79,%,>80
+E17284,Spirometry,72,%,>80
+E18697,Blood Pressure,149/95,mmHg,120/80
+E19213,Spirometry,80,%,>80
+E20336,Blood Pressure,145/95,mmHg,120/80
+E21649,Cholesterol,228,mg/dL,<200
+E22764,Blood Pressure,139/85,mmHg,120/80
+E23465,Blood Pressure,145/95,mmHg,120/80
+E24911,Blood Pressure,147/93,mmHg,120/80
+E25113,HbA1c,8.9,%,<5.7
+E26987,Blood Pressure,145/95,mmHg,120/80
+E27138,Blood Pressure,145/95,mmHg,120/80
+E28284,Blood Pressure,145/95,mmHg,120/80
+E29370,Blood Pressure,139/85,mmHg,120/80
+E30319,CBC,Normal,,Normal
+E31543,Blood Pressure,136/95,mmHg,120/80
+E32818,Blood Pressure,142/93,mmHg,120/80
+E33717,Spirometry,79,%,>80
+E34843,HbA1c,7.8,%,<5.7
+E35849,Blood Pressure,149/87,mmHg,120/80
+E36469,Cholesterol,210,mg/dL,<200
+E37434,Spirometry,69,%,>80
+E38577,Blood Pressure,150/92,mmHg,120/80
+E39171,CBC,Normal,,Normal
+E40886,Spirometry,74,%,>80
+E41546,Cholesterol,235,mg/dL,<200
+E42233,Blood Pressure,145/95,mmHg,120/80
+E43775,Cholesterol,243,mg/dL,<200
+E44627,Blood Pressure,145/95,mmHg,120/80
+E45224,Spirometry,66,%,>80
+E46925,Blood Pressure,145/95,mmHg,120/80
+E47149,CBC,Normal,,Normal
+E48165,CBC,Normal,,Normal
+E49234,CBC,Normal,,Normal
+E50338,Cholesterol,217,mg/dL,<200
+E51724,Blood Pressure,140/89,mmHg,120/80
+E52322,HbA1c,8.2,%,<5.7
+E53423,Blood Pressure,136/85,mmHg,120/80
+E54999,Cholesterol,211,mg/dL,<200
+E55682,Blood Pressure,145/95,mmHg,120/80
+E56498,Blood Pressure,137/91,mmHg,120/80
+E57932,Cholesterol,248,mg/dL,<200
+E58299,HbA1c,8.3,%,<5.7
+E59470,Blood Pressure,145/95,mmHg,120/80
+E60668,Blood Pressure,145/95,mmHg,120/80
+E61614,Spirometry,71,%,>80
+E62401,Blood Pressure,145/86,mmHg,120/80
+E63133,Cholesterol,268,mg/dL,<200
+E64200,Cholesterol,245,mg/dL,<200
+E65961,Cholesterol,255,mg/dL,<200
+E66654,Cholesterol,202,mg/dL,<200
+E67833,HbA1c,6.8,%,<5.7
+E68519,Blood Pressure,141/88,mmHg,120/80
+E69482,Blood Pressure,145/95,mmHg,120/80
+E70696,Cholesterol,218,mg/dL,<200
+E71440,Cholesterol,254,mg/dL,<200
+E72574,Cholesterol,262,mg/dL,<200
+E73813,Spirometry,70,%,>80
+E74269,CBC,Normal,,Normal
+E75273,Spirometry,74,%,>80
+E76176,Cholesterol,262,mg/dL,<200
+E77793,Cholesterol,200,mg/dL,<200
+E78180,Blood Pressure,145/95,mmHg,120/80
+E79528,Cholesterol,248,mg/dL,<200
+E80795,HbA1c,6.8,%,<5.7
+E81442,Blood Pressure,145/95,mmHg,120/80
+E82995,CBC,Normal,,Normal
+E83539,HbA1c,8.5,%,<5.7
+E84466,CBC,Normal,,Normal
+E85850,Blood Pressure,145/95,mmHg,120/80
+E86599,CBC,Normal,,Normal
+E87283,Blood Pressure,142/94,mmHg,120/80
+E88702,Spirometry,66,%,>80
+E89165,Cholesterol,223,mg/dL,<200
+E90649,HbA1c,9.1,%,<5.7
+E91181,HbA1c,7.2,%,<5.7
+E92894,Cholesterol,234,mg/dL,<200
+E93214,CBC,Normal,,Normal
+E94459,Blood Pressure,145/95,mmHg,120/80
+E95726,Blood Pressure,145/95,mmHg,120/80
+E96124,CBC,Normal,,Normal
+E97219,CBC,Normal,,Normal
+E98635,Blood Pressure,145/95,mmHg,120/80
+E99558,HbA1c,7.3,%,<5.7
+E100646,Blood Pressure,145/95,mmHg,120/80
