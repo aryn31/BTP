@@ -3,7 +3,8 @@ from langchain_community.llms import Ollama
 from langchain.agents import initialize_agent, AgentType
 
 # Import tools from agent1
-from .agent1 import risk_score_tool, detect_anomalies_tool, abnormal_patients_tool
+# from .agent1 import risk_score_tool, detect_anomalies_tool, abnormal_patients_tool
+from .agent2 import risk_score_tool, detect_anomalies_tool, abnormal_patients_tool
 
 # Load local Mistral (make sure `ollama run mistral` works on your machine)
 llm = Ollama(model="mistral", temperature=0)
