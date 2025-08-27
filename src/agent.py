@@ -1,28 +1,35 @@
 # src/agent.py
-from langchain_community.llms import Ollama
+# <<< FIXED DEPRECATION WARNING >>>
+# The new recommended way to import and use Ollama
+from langchain_ollama import OllamaLLM
 from langchain.agents import initialize_agent, AgentType
 
-# Import tools from agent3 now, including the new summary tool
-# <<< CHANGED from .agent2 to .agent3
-from .agent3 import (
+from .agent4 import (
+    get_patient_medications_tool,
+    get_lab_results_tool,
+    get_encounter_notes_tool,
+    summarize_patient_conditions_tool,
     risk_score_tool,
     detect_anomalies_tool,
     abnormal_patients_tool,
-    summarize_patient_conditions_tool, # <<< ADDED the new tool
 )
 
-# Load local Mistral (make sure `ollama run mistral` works on your machine)
-llm = Ollama(model="mistral", temperature=0)
+# <<< FIXED DEPRECATION WARNING >>>
+# Initialize with the new class name
+llm = OllamaLLM(model="mistral", temperature=0)
 
-# Register all available tools
 tools = [
+    get_patient_medications_tool,
+    get_lab_results_tool,
+    get_encounter_notes_tool,
+    summarize_patient_conditions_tool,
     risk_score_tool,
     detect_anomalies_tool,
     abnormal_patients_tool,
-    summarize_patient_conditions_tool, # <<< ADDED the new tool to the list
 ]
 
-# Build agent
+# The LangGraph warning is a general recommendation for new projects.
+# Your current agent initialization is still functional and correct for this setup.
 agent = initialize_agent(
     tools,
     llm,
@@ -31,5 +38,4 @@ agent = initialize_agent(
 )
 
 def run_agent(query: str):
-    # agent.run is fine; agent.invoke is the newer API if you prefer
     return agent.run(query)
