@@ -14,7 +14,7 @@ from .agent4 import (
     abnormal_patients_tool,
 )
 
-from .email_workflow_tool import escalate_via_email
+
 
 # <<< FIXED DEPRECATION WARNING >>>
 # Initialize with the new class name
@@ -28,7 +28,7 @@ tools = [
     risk_score_tool,
     detect_anomalies_tool,
     abnormal_patients_tool,
-    escalate_via_email,
+
 ]
 
 # The LangGraph warning is a general recommendation for new projects.
