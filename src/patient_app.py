@@ -1,64 +1,59 @@
 import streamlit as st
-import mysql.connector
-from datetime import datetime
+from sqlalchemy import create_engine, text
+import os
+import pandas as pd
 
-# DB connection
-def get_db():
-    return mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="sql_my1country",
-        database="BTP"
-    )
+DB_URI = os.getenv("DATABASE_URI", "mysql+pymysql://root:sql_my1country@localhost:3306/BTP")
+engine = create_engine(DB_URI)
 
-st.title("Patient Portal")
+st.title("👤 Patient Portal")
 
-# Select patient (for demo, dropdown)
-conn = get_db()
-cur = conn.cursor()
-cur.execute("SELECT PatientID, Name FROM Patients")
-patients = cur.fetchall()
-patient_map = {name: pid for pid, name in patients}
-patient_name = st.selectbox("Select Patient", list(patient_map.keys()))
-patient_id = patient_map[patient_name]
+patient_id = st.number_input("Enter your Patient ID", min_value=1, step=1)
 
-# Fetch active alerts for this patient
-cur.execute("""
-    SELECT AlertID, CreatedAt
-    FROM Alerts
-    WHERE PatientID=%s
-    ORDER BY CreatedAt DESC
-""", (patient_id,))
-alerts = cur.fetchall()
+if patient_id:
+    with engine.begin() as conn:
+        # Get latest alert
+        alert = conn.execute(
+            text("SELECT * FROM Alerts WHERE PatientID=:pid ORDER BY CreatedAt DESC LIMIT 1"),
+            {"pid": patient_id}
+        ).fetchone()
 
-if alerts:
-    alert_id = alerts[0][0]  # latest alert
-    st.subheader(f"Active Alert (ID {alert_id})")
+    if alert:
+        alert_id = alert.AlertID
+        st.subheader(f"Latest Alert (ID: {alert_id})")
 
-    # Show conversation
-    cur.execute("""
-        SELECT Sender, MessageType, Message, SentAt
-        FROM AgentPatientMessages
-        WHERE AlertID=%s AND PatientID=%s
-        ORDER BY SentAt
-    """, (alert_id, patient_id))
-    messages = cur.fetchall()
+        # Show conversation history
+        msgs = pd.read_sql(
+            text("SELECT Sender, MessageType, Message, SentAt FROM AgentPatientMessages WHERE AlertID=:aid ORDER BY SentAt"),
+            engine,
+            params={"aid": alert_id}
+        )
+        st.table(msgs)
 
-    for sender, mtype, msg, sent_at in messages:
-        st.write(f"**{sender} ({mtype}) [{sent_at}]**: {msg}")
+        # --- Check if patient already responded ---
+        with engine.begin() as conn:
+            already_responded = conn.execute(
+                text("""
+                    SELECT COUNT(*) FROM AgentPatientMessages 
+                    WHERE AlertID=:aid AND Sender='Patient' AND MessageType='RESPONSE'
+                """),
+                {"aid": alert_id}
+            ).scalar()
 
-    # Patient response box
-    reply = st.text_area("Your Response")
-    if st.button("Send Response"):
-        cur.execute("""
-            INSERT INTO AgentPatientMessages (AlertID, PatientID, Sender, MessageType, Message, SentAt)
-            VALUES (%s, %s, 'Patient', 'RESPONSE', %s, %s)
-        """, (alert_id, patient_id, reply, datetime.now()))
-        conn.commit()
-        st.success("Response sent.")
-        st.rerun()
-else:
-    st.info("No active alerts.")
-
-cur.close()
-conn.close()
+        if already_responded == 0:
+            response = st.text_area("💬 Your Response")
+            if st.button("Submit Response"):
+                with engine.begin() as conn:
+                    conn.execute(
+                        text("""
+                            INSERT INTO AgentPatientMessages
+                            (AlertID, PatientID, Sender, MessageType, Message)
+                            VALUES (:aid, :pid, 'Patient', 'RESPONSE', :msg)
+                        """),
+                        {"aid": alert_id, "pid": patient_id, "msg": response}
+                    )
+                st.success("✅ Response submitted.")
+        else:
+            st.info("ℹ️ You have already responded to this alert.")
+    else:
+        st.info("No alerts found for this patient.")

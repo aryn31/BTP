@@ -1,72 +1,67 @@
 import streamlit as st
-import mysql.connector
-from datetime import datetime
+from sqlalchemy import create_engine, text
+import os
+import pandas as pd
 
-def get_db():
-    return mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="sql_my1country",
-        database="BTP"
-    )
+DB_URI = os.getenv("DATABASE_URI", "mysql+pymysql://root:sql_my1country@localhost:3306/BTP")
+engine = create_engine(DB_URI)
 
-st.title("Doctor Portal")
+st.title("👨‍⚕️ Doctor Portal")
 
-# Select doctor
-conn = get_db()
-cur = conn.cursor()
-cur.execute("SELECT DoctorID, DoctorName FROM Doctors")
-doctors = cur.fetchall()
-doctor_map = {name: did for did, name in doctors}
-doctor_name = st.selectbox("Select Doctor", list(doctor_map.keys()))
-doctor_id = doctor_map[doctor_name]
+doctor_id = st.number_input("Enter your Doctor ID", min_value=1, step=1)
 
-# Fetch escalations for this doctor
-cur.execute("""
-    SELECT a.AlertID, p.Name, ad.Message, ad.SentAt
-    FROM AgentDoctorMessages ad
-    JOIN Alerts a ON ad.AlertID = a.AlertID
-    JOIN Patients p ON a.PatientID = p.PatientID
-    WHERE ad.DoctorID=%s AND ad.MessageType='ESCALATION'
-    ORDER BY ad.SentAt DESC
-""", (doctor_id,))
-alerts = cur.fetchall()
+if doctor_id:
+    with engine.begin() as conn:
+        # Get latest escalated alert
+        alert = conn.execute(
+            text("""
+                SELECT a.AlertID, a.PatientID, p.Name
+                FROM Alerts a
+                JOIN Patients p ON a.PatientID=p.PatientID
+                WHERE a.AlertID IN (
+                    SELECT AlertID FROM AgentDoctorMessages WHERE DoctorID=:did
+                )
+                ORDER BY a.CreatedAt DESC LIMIT 1
+            """),
+            {"did": doctor_id}
+        ).fetchone()
 
-if alerts:
-    alert_id, patient_name, msg, sent_at = alerts[0]  # latest escalation
-    st.subheader(f"Escalation for Patient: {patient_name} (AlertID {alert_id})")
-    st.write(f"**Agent (ESCALATION) [{sent_at}]**: {msg}")
+    if alert:
+        alert_id = alert.AlertID
+        st.subheader(f"Escalated Alert (ID: {alert_id}) for Patient {alert.Name}")
 
-    # Show doctor ↔ agent history
-    cur.execute("""
-        SELECT Sender, MessageType, Message, SentAt
-        FROM AgentDoctorMessages
-        WHERE AlertID=%s AND DoctorID=%s
-        ORDER BY SentAt
-    """, (alert_id, doctor_id))
-    messages = cur.fetchall()
+        # Show conversation history
+        msgs = pd.read_sql(
+            text("SELECT Sender, MessageType, Message, SentAt FROM AgentDoctorMessages WHERE AlertID=:aid ORDER BY SentAt"),
+            engine,
+            params={"aid": alert_id}
+        )
+        st.table(msgs)
 
-    for sender, mtype, msg, sent_at in messages:
-        st.write(f"**{sender} ({mtype}) [{sent_at}]**: {msg}")
+        # --- Check if doctor already responded ---
+        with engine.begin() as conn:
+            already_responded = conn.execute(
+                text("""
+                    SELECT COUNT(*) FROM AgentDoctorMessages 
+                    WHERE AlertID=:aid AND Sender='Doctor' AND MessageType='RESPONSE'
+                """),
+                {"aid": alert_id}
+            ).scalar()
 
-    # Doctor response box
-    reply = st.text_area("Doctor's Response")
-    if st.button("Send Response"):
-        cur.execute("""
-            INSERT INTO AgentDoctorMessages (AlertID, PatientID, DoctorID, Sender, MessageType, Message, SentAt)
-            VALUES (%s,
-                    (SELECT PatientID FROM Alerts WHERE AlertID=%s),
-                    %s,
-                    'Doctor',
-                    'RESPONSE',
-                    %s,
-                    %s)
-        """, (alert_id, alert_id, doctor_id, reply, datetime.now()))
-        conn.commit()
-        st.success("Response sent to Agent.")
-        st.rerun()
-else:
-    st.info("No escalations yet.")
-
-cur.close()
-conn.close()
+        if already_responded == 0:
+            response = st.text_area("💬 Your Response")
+            if st.button("Submit Response"):
+                with engine.begin() as conn:
+                    conn.execute(
+                        text("""
+                            INSERT INTO AgentDoctorMessages
+                            (AlertID, PatientID, DoctorID, Sender, MessageType, Message)
+                            VALUES (:aid, :pid, :did, 'Doctor', 'RESPONSE', :msg)
+                        """),
+                        {"aid": alert_id, "pid": alert.PatientID, "did": doctor_id, "msg": response}
+                    )
+                st.success("✅ Response submitted.")
+        else:
+            st.info("ℹ️ You have already responded to this alert.")
+    else:
+        st.info("No escalated alerts found for this doctor.")
