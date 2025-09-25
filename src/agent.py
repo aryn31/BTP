@@ -97,6 +97,7 @@ def check_and_escalate(alert_id: int, patient_id: int, doctor_id: int):
         ).scalar()
     if resp == 0:  # no patient response
         log_escalation(patient_id, doctor_id, alert_id)
+    
 
 
 def schedule_escalation(alert_id: int, patient_id: int, doctor_id: int, timeout=5):

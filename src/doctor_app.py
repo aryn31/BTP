@@ -60,6 +60,7 @@ if doctor_id:
                         """),
                         {"aid": alert_id, "pid": alert.PatientID, "did": doctor_id, "msg": response}
                     )
+                print(f"🩺 Doctor {doctor_id} responded for Patient {alert.PatientID}, "f"Alert {alert_id}: {response}")
                 st.success("✅ Response submitted.")
         else:
             st.info("ℹ️ You have already responded to this alert.")

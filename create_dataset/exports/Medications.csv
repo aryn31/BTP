@@ -1,0 +1,181 @@
+EncounterID,DrugName,Dosage,Frequency,Duration
+207,Metformin,500mg,2/day,6 months
+208,Metformin,500mg,2/day,6 months
+209,Metformin,500mg,2/day,6 months
+210,Inhaled corticosteroid,2 puffs,bid,ongoing
+211,Inhaled corticosteroid,2 puffs,bid,ongoing
+212,Inhaled corticosteroid,2 puffs,bid,ongoing
+213,Metformin,500mg,2/day,6 months
+214,Metformin,500mg,2/day,6 months
+216,Thiazide diuretic,12.5mg,1/day,6 months
+217,Thiazide diuretic,12.5mg,1/day,6 months
+218,Atorvastatin,10mg,1/day,6 months
+219,Atorvastatin,10mg,1/day,6 months
+220,Amlodipine,5mg,1/day,6 months
+221,Atorvastatin,10mg,1/day,6 months
+221,ACE inhibitor,5mg,1/day,6 months
+222,Atorvastatin,10mg,1/day,6 months
+222,ACE inhibitor,5mg,1/day,6 months
+226,Metformin,500mg,2/day,6 months
+227,Metformin,500mg,2/day,6 months
+228,Metformin,500mg,2/day,6 months
+230,Thiazide diuretic,12.5mg,1/day,6 months
+233,Inhaled corticosteroid,2 puffs,bid,ongoing
+234,Inhaled corticosteroid,2 puffs,bid,ongoing
+235,Inhaled corticosteroid,2 puffs,bid,ongoing
+239,Inhaled corticosteroid,2 puffs,bid,ongoing
+240,Inhaled corticosteroid,2 puffs,bid,ongoing
+241,Atorvastatin,10mg,1/day,6 months
+242,Amlodipine,5mg,1/day,6 months
+243,Amlodipine,5mg,1/day,6 months
+244,Amlodipine,5mg,1/day,6 months
+244,Weight-loss counseling,-,weekly,3 months
+248,Inhaled corticosteroid,2 puffs,bid,ongoing
+249,Metformin,500mg,2/day,6 months
+250,Metformin,500mg,2/day,6 months
+250,Insulin (basal),10U,1/day,ongoing
+251,Inhaled corticosteroid,2 puffs,bid,ongoing
+254,Amlodipine,5mg,1/day,6 months
+255,Metformin,500mg,2/day,6 months
+255,Insulin (basal),10U,1/day,ongoing
+256,Metformin,500mg,2/day,6 months
+261,Inhaled corticosteroid,2 puffs,bid,ongoing
+262,Inhaled corticosteroid,2 puffs,bid,ongoing
+263,Amlodipine,5mg,1/day,6 months
+264,Amlodipine,5mg,1/day,6 months
+264,Weight-loss counseling,-,weekly,3 months
+265,Atorvastatin,10mg,1/day,6 months
+269,Metformin,500mg,2/day,6 months
+270,Metformin,500mg,2/day,6 months
+271,Atorvastatin,10mg,1/day,6 months
+272,Atorvastatin,10mg,1/day,6 months
+273,Atorvastatin,10mg,1/day,6 months
+275,Atorvastatin,10mg,1/day,6 months
+276,Atorvastatin,10mg,1/day,6 months
+277,Metformin,500mg,2/day,6 months
+278,Metformin,500mg,2/day,6 months
+279,Metformin,500mg,2/day,6 months
+280,Atorvastatin,10mg,1/day,6 months
+281,Atorvastatin,10mg,1/day,6 months
+281,ACE inhibitor,5mg,1/day,6 months
+283,Multivitamin,1 tab,1/day,1 month
+285,Metformin,500mg,2/day,6 months
+286,Metformin,500mg,2/day,6 months
+287,Metformin,500mg,2/day,6 months
+288,Amlodipine,5mg,1/day,6 months
+289,Amlodipine,5mg,1/day,6 months
+289,Weight-loss counseling,-,weekly,3 months
+290,Amlodipine,5mg,1/day,6 months
+290,Weight-loss counseling,-,weekly,3 months
+291,Atorvastatin,10mg,1/day,6 months
+292,Atorvastatin,10mg,1/day,6 months
+293,Inhaled corticosteroid,2 puffs,bid,ongoing
+294,Inhaled corticosteroid,2 puffs,bid,ongoing
+295,Inhaled corticosteroid,2 puffs,bid,ongoing
+297,Amlodipine,5mg,1/day,6 months
+298,Amlodipine,5mg,1/day,6 months
+299,Amlodipine,5mg,1/day,6 months
+300,Amlodipine,5mg,1/day,6 months
+301,Amlodipine,5mg,1/day,6 months
+302,Atorvastatin,10mg,1/day,6 months
+303,Atorvastatin,10mg,1/day,6 months
+304,Atorvastatin,10mg,1/day,6 months
+305,Metformin,500mg,2/day,6 months
+306,Metformin,500mg,2/day,6 months
+307,Metformin,500mg,2/day,6 months
+308,Amlodipine,5mg,1/day,6 months
+309,Amlodipine,5mg,1/day,6 months
+310,Amlodipine,5mg,1/day,6 months
+312,Thiazide diuretic,12.5mg,1/day,6 months
+314,Metformin,500mg,2/day,6 months
+314,Insulin (basal),10U,1/day,ongoing
+315,Metformin,500mg,2/day,6 months
+316,Inhaled corticosteroid,2 puffs,bid,ongoing
+317,Inhaled corticosteroid,2 puffs,bid,ongoing
+318,Metformin,500mg,2/day,6 months
+318,Insulin (basal),10U,1/day,ongoing
+319,Atorvastatin,10mg,1/day,6 months
+320,Atorvastatin,10mg,1/day,6 months
+321,Atorvastatin,10mg,1/day,6 months
+322,Amlodipine,5mg,1/day,6 months
+322,Weight-loss counseling,-,weekly,3 months
+323,Amlodipine,5mg,1/day,6 months
+324,Amlodipine,5mg,1/day,6 months
+325,Atorvastatin,10mg,1/day,6 months
+326,Atorvastatin,10mg,1/day,6 months
+326,ACE inhibitor,5mg,1/day,6 months
+327,Inhaled corticosteroid,2 puffs,bid,ongoing
+328,Atorvastatin,10mg,1/day,6 months
+328,ACE inhibitor,5mg,1/day,6 months
+329,Atorvastatin,10mg,1/day,6 months
+330,Atorvastatin,10mg,1/day,6 months
+330,ACE inhibitor,5mg,1/day,6 months
+331,Amlodipine,5mg,1/day,6 months
+332,Amlodipine,5mg,1/day,6 months
+335,Thiazide diuretic,12.5mg,1/day,6 months
+337,Amlodipine,5mg,1/day,6 months
+338,Amlodipine,5mg,1/day,6 months
+339,Inhaled corticosteroid,2 puffs,bid,ongoing
+340,Inhaled corticosteroid,2 puffs,bid,ongoing
+341,Inhaled corticosteroid,2 puffs,bid,ongoing
+342,Inhaled corticosteroid,2 puffs,bid,ongoing
+343,Inhaled corticosteroid,2 puffs,bid,ongoing
+344,Inhaled corticosteroid,2 puffs,bid,ongoing
+345,Amlodipine,5mg,1/day,6 months
+345,Weight-loss counseling,-,weekly,3 months
+346,Amlodipine,5mg,1/day,6 months
+347,Inhaled corticosteroid,2 puffs,bid,ongoing
+348,Inhaled corticosteroid,2 puffs,bid,ongoing
+349,Inhaled corticosteroid,2 puffs,bid,ongoing
+350,Inhaled corticosteroid,2 puffs,bid,ongoing
+353,Inhaled corticosteroid,2 puffs,bid,ongoing
+354,Inhaled corticosteroid,2 puffs,bid,ongoing
+355,Inhaled corticosteroid,2 puffs,bid,ongoing
+356,Inhaled corticosteroid,2 puffs,bid,ongoing
+357,Inhaled corticosteroid,2 puffs,bid,ongoing
+358,Amlodipine,5mg,1/day,6 months
+359,Amlodipine,5mg,1/day,6 months
+359,Weight-loss counseling,-,weekly,3 months
+360,Amlodipine,5mg,1/day,6 months
+360,Weight-loss counseling,-,weekly,3 months
+361,Atorvastatin,10mg,1/day,6 months
+362,Atorvastatin,10mg,1/day,6 months
+363,Amlodipine,5mg,1/day,6 months
+363,Weight-loss counseling,-,weekly,3 months
+364,Inhaled corticosteroid,2 puffs,bid,ongoing
+365,Inhaled corticosteroid,2 puffs,bid,ongoing
+370,Multivitamin,1 tab,1/day,1 month
+371,Multivitamin,1 tab,1/day,1 month
+372,Metformin,500mg,2/day,6 months
+373,Metformin,500mg,2/day,6 months
+373,Insulin (basal),10U,1/day,ongoing
+374,Amlodipine,5mg,1/day,6 months
+374,Weight-loss counseling,-,weekly,3 months
+375,Amlodipine,5mg,1/day,6 months
+376,Amlodipine,5mg,1/day,6 months
+377,Atorvastatin,10mg,1/day,6 months
+378,Inhaled corticosteroid,2 puffs,bid,ongoing
+379,Amlodipine,5mg,1/day,6 months
+381,Amlodipine,5mg,1/day,6 months
+381,Weight-loss counseling,-,weekly,3 months
+382,Amlodipine,5mg,1/day,6 months
+383,Amlodipine,5mg,1/day,6 months
+384,Inhaled corticosteroid,2 puffs,bid,ongoing
+385,Inhaled corticosteroid,2 puffs,bid,ongoing
+386,Inhaled corticosteroid,2 puffs,bid,ongoing
+387,Amlodipine,5mg,1/day,6 months
+387,Weight-loss counseling,-,weekly,3 months
+388,Amlodipine,5mg,1/day,6 months
+389,Amlodipine,5mg,1/day,6 months
+390,Amlodipine,5mg,1/day,6 months
+391,Amlodipine,5mg,1/day,6 months
+392,Amlodipine,5mg,1/day,6 months
+393,Amlodipine,5mg,1/day,6 months
+395,Thiazide diuretic,12.5mg,1/day,6 months
+396,Thiazide diuretic,12.5mg,1/day,6 months
+398,Multivitamin,1 tab,1/day,1 month
+400,Metformin,500mg,2/day,6 months
+401,Metformin,500mg,2/day,6 months
+401,Insulin (basal),10U,1/day,ongoing
+404,Metformin,500mg,2/day,6 months
+405,Metformin,500mg,2/day,6 months

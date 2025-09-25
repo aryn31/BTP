@@ -6,6 +6,7 @@ import pandas as pd
 import re
 from datetime import datetime, timedelta
 import os
+import math
 
 # === DB Connection (Using Environment Variable) ===
 DB_URI = os.getenv("DATABASE_URI", "mysql+pymysql://root:sql_my1country@localhost:3306/BTP")
@@ -45,59 +46,63 @@ def _normalize_wearable_columns(df: pd.DataFrame) -> pd.DataFrame:
         df["Timestamp"] = pd.to_datetime(df["Timestamp"], errors="coerce")
     return df
 
-# === Risk Scoring Logic ===
+def logistic_risk(x: float, midpoint: float, steepness: float = 0.1, invert: bool = False) -> float:
+    """
+    Logistic risk scoring function.
+    - x: measured value
+    - midpoint: where risk = 0.5
+    - steepness: controls how sharply risk rises
+    - invert: if True, lower values mean higher risk (e.g., SpO2)
+    """
+    if pd.isna(x):
+        return 0.0  # Missing data → no risk contribution
+
+    val = 1 / (1 + math.exp(-steepness * (x - midpoint)))
+    return 1 - val if invert else val
+
+
 def calculate_risk_scores(patient_row: pd.Series, wearable_row: pd.Series):
-    """Calculate health risks based on patient and wearable data."""
+    """Calculate health risks using logistic scoring."""
     risks: Dict[str, float] = {}
     explanations: List[str] = []
 
-    # Hypertension
+    # --- Hypertension (BP > 140/90 risky) ---
     sys_, dia_ = wearable_row.get("SystolicBP"), wearable_row.get("DiastolicBP")
-    if pd.notna(sys_) and pd.notna(dia_) and (sys_ > 140 or dia_ > 90):
-        risks["hypertension"] = 1.0
-        explanations.append(f"High BP detected ({int(sys_)}/{int(dia_)} mmHg).")
+    if pd.notna(sys_) and pd.notna(dia_):
+        risk_sys = logistic_risk(sys_, midpoint=140, steepness=0.05)
+        risk_dia = logistic_risk(dia_, midpoint=90, steepness=0.08)
+        risks["hypertension"] = max(risk_sys, risk_dia)
+        explanations.append(f"BP {int(sys_)}/{int(dia_)} mmHg → Risk {risks['hypertension']:.2f}")
     else:
-        risks["hypertension"] = 0.2
-        if pd.notna(sys_) and pd.notna(dia_):
-            explanations.append(f"Blood pressure normal ({int(sys_)}/{int(dia_)} mmHg).")
-        else:
-            explanations.append("Blood pressure data not available.")
+        risks["hypertension"] = 0.0
+        explanations.append("Blood pressure data not available.")
 
-    # Diabetes (BMI proxy)
+    # --- Diabetes proxy (BMI > 30 risky) ---
     bmi = patient_row.get("BMI")
-    if pd.notna(bmi) and bmi > 30:
-        risks["diabetes"] = 0.8
-        explanations.append(f"High BMI ({bmi}), possible diabetes risk.")
+    if pd.notna(bmi):
+        risks["diabetes"] = logistic_risk(bmi, midpoint=30, steepness=0.2)
+        explanations.append(f"BMI {bmi:.1f} → Risk {risks['diabetes']:.2f}")
     else:
-        risks["diabetes"] = 0.2
-        if pd.notna(bmi):
-            explanations.append(f"BMI ({bmi}) is normal.")
-        else:
-            explanations.append("BMI not available.")
+        risks["diabetes"] = 0.0
+        explanations.append("BMI not available.")
 
-    # Cardiac (tachycardia proxy)
+    # --- Cardiac risk (HR > 110 risky) ---
     hr = wearable_row.get("HeartRate")
-    if pd.notna(hr) and hr > 110:
-        risks["cardiac"] = 0.8
-        explanations.append(f"Elevated heart rate ({int(hr)} bpm).")
+    if pd.notna(hr):
+        risks["cardiac"] = logistic_risk(hr, midpoint=110, steepness=0.07)
+        explanations.append(f"Heart rate {int(hr)} bpm → Risk {risks['cardiac']:.2f}")
     else:
-        risks["cardiac"] = 0.2
-        if pd.notna(hr):
-            explanations.append(f"Heart rate ({int(hr)} bpm) within normal range.")
-        else:
-            explanations.append("Heart rate not available.")
+        risks["cardiac"] = 0.0
+        explanations.append("Heart rate not available.")
 
-    # Respiratory (SpO2 proxy)
+    # --- Respiratory risk (SpO₂ < 92 risky, inverted) ---
     o2 = wearable_row.get("OxygenLevel")
-    if pd.notna(o2) and o2 < 92:
-        risks["respiratory"] = 0.8
-        explanations.append(f"Low oxygen level ({o2}%).")
+    if pd.notna(o2):
+        risks["respiratory"] = logistic_risk(o2, midpoint=92, steepness=0.2, invert=True)
+        explanations.append(f"O₂ {o2:.1f}% → Risk {risks['respiratory']:.2f}")
     else:
-        risks["respiratory"] = 0.2
-        if pd.notna(o2):
-            explanations.append(f"Oxygen level ({o2}%) is normal.")
-        else:
-            explanations.append("Oxygen level not available.")
+        risks["respiratory"] = 0.0
+        explanations.append("Oxygen level not available.")
 
     return risks, explanations
 
