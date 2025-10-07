@@ -1,4 +1,3 @@
-# streamlit_family_portal.py
 import streamlit as st
 from sqlalchemy import create_engine, text
 import os
@@ -15,7 +14,7 @@ st.title("🏡 Family Member Portal")
 # -----------------------------
 # Fetch all patients with family member names
 # -----------------------------
-with engine.begin() as conn:
+with engine.connect() as conn:
     patients_df = pd.read_sql(
         text("SELECT PatientID, Name AS PatientName, FamilyMemberName FROM Patients"),
         conn
@@ -33,7 +32,7 @@ if selected:
     # Extract patient_id from display string
     patient_id = int(selected.split(" - ")[0])
 
-    with engine.begin() as conn:
+    with engine.connect() as conn:
         # Get latest escalated alert for this patient
         alert = conn.execute(
             text("""
@@ -69,13 +68,14 @@ if selected:
         st.table(msgs)
 
         # --- Check if family member already responded ---
-        already_responded = conn.execute(
-            text("""
-                SELECT COUNT(*) FROM AgentFamilyMessages 
-                WHERE AlertID=:aid AND Sender='FamilyMember' AND MessageType='RESPONSE'
-            """),
-            {"aid": alert_id}
-        ).scalar()
+        with engine.connect() as conn:
+            already_responded = conn.execute(
+                text("""
+                    SELECT COUNT(*) FROM AgentFamilyMessages 
+                    WHERE AlertID=:aid AND Sender='FamilyMember' AND MessageType='RESPONSE'
+                """),
+                {"aid": alert_id}
+            ).scalar()
 
         if already_responded == 0:
             response = st.text_area("💬 Your Response")

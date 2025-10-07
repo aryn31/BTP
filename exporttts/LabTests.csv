@@ -1,0 +1,676 @@
+EncounterID,TestName,Result,Unit,NormalRange
+1,Blood Pressure,145/92,mmHg,120/80
+2,Blood Pressure,144/80,mmHg,120/80
+3,Total Cholesterol,277,mg/dL,<200
+3,LDL-C,173,mg/dL,<100
+4,Total Cholesterol,274,mg/dL,<200
+4,LDL-C,181,mg/dL,<100
+5,Total Cholesterol,225,mg/dL,<200
+5,LDL-C,151,mg/dL,<100
+6,Total Cholesterol,250,mg/dL,<200
+6,LDL-C,166,mg/dL,<100
+7,Total Cholesterol,199,mg/dL,<200
+7,HbA1c,5.6,%,<5.7
+8,Total Cholesterol,152,mg/dL,<200
+8,HbA1c,5.3,%,<5.7
+9,Blood Pressure,146/105,mmHg,120/80
+10,Spirometry (FEV1 %),56,%,>80
+11,Spirometry (FEV1 %),73,%,>80
+12,HbA1c,6.5,%,<5.7
+12,Fasting Glucose,100,mg/dL,70-99
+13,Spirometry (FEV1 %),73,%,>80
+14,HbA1c,6.0,%,<5.7
+14,Fasting Glucose,128,mg/dL,70-99
+15,HbA1c,6.0,%,<5.7
+15,Fasting Glucose,132,mg/dL,70-99
+16,Blood Pressure,142/99,mmHg,120/80
+16,Total Cholesterol,250,mg/dL,<200
+17,HbA1c,8.8,%,<5.7
+17,Fasting Glucose,170,mg/dL,70-99
+18,HbA1c,8.0,%,<5.7
+18,Fasting Glucose,157,mg/dL,70-99
+19,Total Cholesterol,159,mg/dL,<200
+19,HbA1c,5.1,%,<5.7
+20,Total Cholesterol,168,mg/dL,<200
+20,HbA1c,5.2,%,<5.7
+21,Total Cholesterol,181,mg/dL,<200
+21,HbA1c,5.3,%,<5.7
+22,Total Cholesterol,231,mg/dL,<200
+22,LDL-C,188,mg/dL,<100
+23,HbA1c,7.5,%,<5.7
+23,Fasting Glucose,113,mg/dL,70-99
+24,HbA1c,8.1,%,<5.7
+24,Fasting Glucose,157,mg/dL,70-99
+25,Blood Pressure,136/86,mmHg,120/80
+25,Total Cholesterol,223,mg/dL,<200
+26,Blood Pressure,153/94,mmHg,120/80
+26,Total Cholesterol,214,mg/dL,<200
+27,Total Cholesterol,177,mg/dL,<200
+27,HbA1c,5.0,%,<5.7
+28,Blood Pressure,137/91,mmHg,120/80
+29,Blood Pressure,158/97,mmHg,120/80
+30,Blood Pressure,139/83,mmHg,120/80
+31,HbA1c,7.1,%,<5.7
+31,Fasting Glucose,166,mg/dL,70-99
+32,HbA1c,10.3,%,<5.7
+32,Fasting Glucose,137,mg/dL,70-99
+33,Blood Pressure,120/91,mmHg,120/80
+34,Blood Pressure,160/100,mmHg,120/80
+35,Blood Pressure,144/86,mmHg,120/80
+36,Blood Pressure,141/101,mmHg,120/80
+36,Total Cholesterol,189,mg/dL,<200
+37,Spirometry (FEV1 %),63,%,>80
+38,Spirometry (FEV1 %),52,%,>80
+39,Spirometry (FEV1 %),64,%,>80
+40,Spirometry (FEV1 %),66,%,>80
+41,Blood Pressure,142/89,mmHg,120/80
+41,Total Cholesterol,180,mg/dL,<200
+42,Blood Pressure,154/100,mmHg,120/80
+42,Total Cholesterol,188,mg/dL,<200
+43,Blood Pressure,128/84,mmHg,120/80
+43,Total Cholesterol,206,mg/dL,<200
+44,Blood Pressure,148/105,mmHg,120/80
+44,Total Cholesterol,180,mg/dL,<200
+45,Spirometry (FEV1 %),58,%,>80
+46,Spirometry (FEV1 %),61,%,>80
+47,Spirometry (FEV1 %),63,%,>80
+48,Blood Pressure,146/94,mmHg,120/80
+49,Blood Pressure,142/94,mmHg,120/80
+50,Spirometry (FEV1 %),80,%,>80
+51,Spirometry (FEV1 %),59,%,>80
+52,Spirometry (FEV1 %),70,%,>80
+53,HbA1c,7.4,%,<5.7
+53,Fasting Glucose,185,mg/dL,70-99
+54,HbA1c,7.7,%,<5.7
+54,Fasting Glucose,176,mg/dL,70-99
+55,HbA1c,8.0,%,<5.7
+55,Fasting Glucose,168,mg/dL,70-99
+56,HbA1c,8.7,%,<5.7
+56,Fasting Glucose,178,mg/dL,70-99
+57,HbA1c,6.2,%,<5.7
+57,Fasting Glucose,189,mg/dL,70-99
+58,HbA1c,7.9,%,<5.7
+58,Fasting Glucose,171,mg/dL,70-99
+59,Blood Pressure,145/91,mmHg,120/80
+59,Total Cholesterol,198,mg/dL,<200
+60,Blood Pressure,147/90,mmHg,120/80
+60,Total Cholesterol,160,mg/dL,<200
+61,Blood Pressure,138/93,mmHg,120/80
+61,Total Cholesterol,174,mg/dL,<200
+62,Total Cholesterol,241,mg/dL,<200
+62,LDL-C,205,mg/dL,<100
+63,Total Cholesterol,270,mg/dL,<200
+63,LDL-C,162,mg/dL,<100
+64,Spirometry (FEV1 %),67,%,>80
+65,Spirometry (FEV1 %),82,%,>80
+66,Total Cholesterol,263,mg/dL,<200
+66,LDL-C,172,mg/dL,<100
+67,Total Cholesterol,240,mg/dL,<200
+67,LDL-C,174,mg/dL,<100
+68,Total Cholesterol,246,mg/dL,<200
+68,LDL-C,176,mg/dL,<100
+69,HbA1c,6.1,%,<5.7
+69,Fasting Glucose,102,mg/dL,70-99
+70,HbA1c,7.5,%,<5.7
+70,Fasting Glucose,173,mg/dL,70-99
+71,HbA1c,9.2,%,<5.7
+71,Fasting Glucose,126,mg/dL,70-99
+72,HbA1c,7.9,%,<5.7
+72,Fasting Glucose,141,mg/dL,70-99
+73,HbA1c,6.0,%,<5.7
+73,Fasting Glucose,95,mg/dL,70-99
+74,HbA1c,7.8,%,<5.7
+74,Fasting Glucose,183,mg/dL,70-99
+75,Blood Pressure,126/92,mmHg,120/80
+76,Total Cholesterol,150,mg/dL,<200
+76,HbA1c,4.8,%,<5.7
+77,Blood Pressure,140/83,mmHg,120/80
+77,Total Cholesterol,224,mg/dL,<200
+78,Blood Pressure,158/95,mmHg,120/80
+78,Total Cholesterol,219,mg/dL,<200
+79,Total Cholesterol,189,mg/dL,<200
+79,LDL-C,166,mg/dL,<100
+80,Total Cholesterol,243,mg/dL,<200
+80,LDL-C,123,mg/dL,<100
+81,Total Cholesterol,262,mg/dL,<200
+81,LDL-C,183,mg/dL,<100
+82,HbA1c,6.6,%,<5.7
+82,Fasting Glucose,177,mg/dL,70-99
+83,HbA1c,9.4,%,<5.7
+83,Fasting Glucose,206,mg/dL,70-99
+84,HbA1c,9.0,%,<5.7
+84,Fasting Glucose,189,mg/dL,70-99
+85,Total Cholesterol,162,mg/dL,<200
+85,HbA1c,5.2,%,<5.7
+86,Total Cholesterol,294,mg/dL,<200
+86,LDL-C,158,mg/dL,<100
+87,Blood Pressure,127/100,mmHg,120/80
+88,Blood Pressure,135/96,mmHg,120/80
+89,Total Cholesterol,276,mg/dL,<200
+89,LDL-C,189,mg/dL,<100
+90,Total Cholesterol,254,mg/dL,<200
+90,LDL-C,161,mg/dL,<100
+91,Total Cholesterol,236,mg/dL,<200
+91,LDL-C,144,mg/dL,<100
+92,Spirometry (FEV1 %),70,%,>80
+93,Spirometry (FEV1 %),78,%,>80
+94,Spirometry (FEV1 %),74,%,>80
+95,Total Cholesterol,193,mg/dL,<200
+95,LDL-C,183,mg/dL,<100
+96,Total Cholesterol,261,mg/dL,<200
+96,LDL-C,174,mg/dL,<100
+97,Blood Pressure,146/83,mmHg,120/80
+98,HbA1c,7.7,%,<5.7
+98,Fasting Glucose,150,mg/dL,70-99
+99,HbA1c,7.5,%,<5.7
+99,Fasting Glucose,119,mg/dL,70-99
+100,HbA1c,6.0,%,<5.7
+100,Fasting Glucose,118,mg/dL,70-99
+101,Blood Pressure,127/81,mmHg,120/80
+101,Total Cholesterol,213,mg/dL,<200
+102,Blood Pressure,140/93,mmHg,120/80
+102,Total Cholesterol,222,mg/dL,<200
+103,Blood Pressure,133/91,mmHg,120/80
+103,Total Cholesterol,183,mg/dL,<200
+104,Spirometry (FEV1 %),65,%,>80
+105,Spirometry (FEV1 %),66,%,>80
+106,Spirometry (FEV1 %),68,%,>80
+107,Total Cholesterol,250,mg/dL,<200
+107,LDL-C,165,mg/dL,<100
+108,Total Cholesterol,206,mg/dL,<200
+108,LDL-C,153,mg/dL,<100
+109,Total Cholesterol,207,mg/dL,<200
+109,LDL-C,182,mg/dL,<100
+110,Blood Pressure,135/90,mmHg,120/80
+111,Blood Pressure,147/82,mmHg,120/80
+112,Blood Pressure,142/88,mmHg,120/80
+112,Total Cholesterol,210,mg/dL,<200
+113,Blood Pressure,135/93,mmHg,120/80
+113,Total Cholesterol,229,mg/dL,<200
+114,Total Cholesterol,187,mg/dL,<200
+114,HbA1c,5.4,%,<5.7
+115,Total Cholesterol,180,mg/dL,<200
+115,HbA1c,5.3,%,<5.7
+116,Blood Pressure,131/95,mmHg,120/80
+117,Blood Pressure,127/91,mmHg,120/80
+118,Blood Pressure,152/82,mmHg,120/80
+118,Total Cholesterol,269,mg/dL,<200
+119,Blood Pressure,140/88,mmHg,120/80
+119,Total Cholesterol,230,mg/dL,<200
+120,Total Cholesterol,277,mg/dL,<200
+120,LDL-C,168,mg/dL,<100
+121,Total Cholesterol,256,mg/dL,<200
+121,LDL-C,188,mg/dL,<100
+122,Total Cholesterol,281,mg/dL,<200
+122,LDL-C,150,mg/dL,<100
+123,Total Cholesterol,189,mg/dL,<200
+123,HbA1c,5.4,%,<5.7
+124,Total Cholesterol,195,mg/dL,<200
+124,HbA1c,4.8,%,<5.7
+125,Total Cholesterol,180,mg/dL,<200
+125,HbA1c,4.9,%,<5.7
+126,Total Cholesterol,189,mg/dL,<200
+126,HbA1c,5.0,%,<5.7
+127,Total Cholesterol,188,mg/dL,<200
+127,HbA1c,5.4,%,<5.7
+128,Total Cholesterol,204,mg/dL,<200
+128,HbA1c,5.2,%,<5.7
+129,Total Cholesterol,238,mg/dL,<200
+129,LDL-C,121,mg/dL,<100
+130,Total Cholesterol,302,mg/dL,<200
+130,LDL-C,133,mg/dL,<100
+131,Total Cholesterol,252,mg/dL,<200
+131,LDL-C,188,mg/dL,<100
+132,Spirometry (FEV1 %),60,%,>80
+133,Spirometry (FEV1 %),72,%,>80
+134,Spirometry (FEV1 %),62,%,>80
+135,Blood Pressure,150/89,mmHg,120/80
+136,Blood Pressure,154/90,mmHg,120/80
+137,Blood Pressure,143/88,mmHg,120/80
+138,Total Cholesterol,241,mg/dL,<200
+138,LDL-C,124,mg/dL,<100
+139,Total Cholesterol,256,mg/dL,<200
+139,LDL-C,164,mg/dL,<100
+140,Blood Pressure,155/99,mmHg,120/80
+140,Total Cholesterol,254,mg/dL,<200
+141,Total Cholesterol,290,mg/dL,<200
+141,LDL-C,183,mg/dL,<100
+142,Total Cholesterol,288,mg/dL,<200
+142,LDL-C,185,mg/dL,<100
+143,Total Cholesterol,237,mg/dL,<200
+143,LDL-C,183,mg/dL,<100
+144,Total Cholesterol,222,mg/dL,<200
+144,LDL-C,166,mg/dL,<100
+145,Total Cholesterol,271,mg/dL,<200
+145,LDL-C,113,mg/dL,<100
+146,Total Cholesterol,180,mg/dL,<200
+146,HbA1c,5.6,%,<5.7
+147,Total Cholesterol,179,mg/dL,<200
+147,HbA1c,5.4,%,<5.7
+148,Total Cholesterol,159,mg/dL,<200
+148,HbA1c,5.4,%,<5.7
+149,Spirometry (FEV1 %),66,%,>80
+150,Spirometry (FEV1 %),60,%,>80
+151,Spirometry (FEV1 %),64,%,>80
+152,Spirometry (FEV1 %),62,%,>80
+153,Spirometry (FEV1 %),67,%,>80
+154,Spirometry (FEV1 %),80,%,>80
+155,Total Cholesterol,274,mg/dL,<200
+155,LDL-C,191,mg/dL,<100
+156,Total Cholesterol,208,mg/dL,<200
+156,LDL-C,176,mg/dL,<100
+157,Total Cholesterol,276,mg/dL,<200
+157,LDL-C,187,mg/dL,<100
+158,Blood Pressure,129/91,mmHg,120/80
+158,Total Cholesterol,206,mg/dL,<200
+159,Blood Pressure,143/102,mmHg,120/80
+159,Total Cholesterol,261,mg/dL,<200
+160,Blood Pressure,125/95,mmHg,120/80
+160,Total Cholesterol,216,mg/dL,<200
+161,HbA1c,6.1,%,<5.7
+161,Fasting Glucose,110,mg/dL,70-99
+162,HbA1c,7.5,%,<5.7
+162,Fasting Glucose,172,mg/dL,70-99
+163,HbA1c,9.5,%,<5.7
+163,Fasting Glucose,189,mg/dL,70-99
+164,Spirometry (FEV1 %),49,%,>80
+165,Spirometry (FEV1 %),63,%,>80
+166,Spirometry (FEV1 %),54,%,>80
+167,Total Cholesterol,177,mg/dL,<200
+167,HbA1c,5.4,%,<5.7
+168,Total Cholesterol,161,mg/dL,<200
+168,HbA1c,5.2,%,<5.7
+169,Spirometry (FEV1 %),70,%,>80
+170,Spirometry (FEV1 %),69,%,>80
+171,Spirometry (FEV1 %),81,%,>80
+172,Total Cholesterol,167,mg/dL,<200
+172,HbA1c,5.3,%,<5.7
+173,Total Cholesterol,174,mg/dL,<200
+173,HbA1c,5.2,%,<5.7
+174,Total Cholesterol,183,mg/dL,<200
+174,HbA1c,5.2,%,<5.7
+175,HbA1c,8.8,%,<5.7
+175,Fasting Glucose,202,mg/dL,70-99
+176,HbA1c,8.5,%,<5.7
+176,Fasting Glucose,176,mg/dL,70-99
+177,Total Cholesterol,158,mg/dL,<200
+177,HbA1c,5.0,%,<5.7
+178,Total Cholesterol,205,mg/dL,<200
+178,HbA1c,5.0,%,<5.7
+179,Total Cholesterol,190,mg/dL,<200
+179,HbA1c,5.1,%,<5.7
+180,Total Cholesterol,259,mg/dL,<200
+180,LDL-C,118,mg/dL,<100
+181,Total Cholesterol,203,mg/dL,<200
+181,LDL-C,149,mg/dL,<100
+182,Blood Pressure,135/96,mmHg,120/80
+183,Blood Pressure,141/88,mmHg,120/80
+184,Spirometry (FEV1 %),66,%,>80
+185,Spirometry (FEV1 %),69,%,>80
+186,Blood Pressure,138/97,mmHg,120/80
+186,Total Cholesterol,231,mg/dL,<200
+187,Total Cholesterol,178,mg/dL,<200
+187,HbA1c,5.1,%,<5.7
+188,Total Cholesterol,188,mg/dL,<200
+188,HbA1c,5.3,%,<5.7
+189,Spirometry (FEV1 %),70,%,>80
+190,HbA1c,9.6,%,<5.7
+190,Fasting Glucose,171,mg/dL,70-99
+191,Blood Pressure,124/88,mmHg,120/80
+192,Blood Pressure,132/91,mmHg,120/80
+193,HbA1c,9.0,%,<5.7
+193,Fasting Glucose,191,mg/dL,70-99
+194,HbA1c,6.7,%,<5.7
+194,Fasting Glucose,145,mg/dL,70-99
+195,Spirometry (FEV1 %),67,%,>80
+196,Spirometry (FEV1 %),57,%,>80
+197,Spirometry (FEV1 %),67,%,>80
+198,Blood Pressure,131/87,mmHg,120/80
+198,Total Cholesterol,191,mg/dL,<200
+199,Blood Pressure,128/93,mmHg,120/80
+199,Total Cholesterol,234,mg/dL,<200
+200,Blood Pressure,145/91,mmHg,120/80
+200,Total Cholesterol,191,mg/dL,<200
+201,HbA1c,7.6,%,<5.7
+201,Fasting Glucose,156,mg/dL,70-99
+202,Total Cholesterol,176,mg/dL,<200
+202,HbA1c,5.5,%,<5.7
+203,Total Cholesterol,264,mg/dL,<200
+203,LDL-C,170,mg/dL,<100
+204,Total Cholesterol,264,mg/dL,<200
+204,LDL-C,176,mg/dL,<100
+205,Total Cholesterol,215,mg/dL,<200
+205,LDL-C,161,mg/dL,<100
+206,Total Cholesterol,198,mg/dL,<200
+206,LDL-C,155,mg/dL,<100
+207,Spirometry (FEV1 %),74,%,>80
+208,Blood Pressure,137/88,mmHg,120/80
+208,Total Cholesterol,196,mg/dL,<200
+209,Total Cholesterol,240,mg/dL,<200
+209,LDL-C,151,mg/dL,<100
+210,Spirometry (FEV1 %),53,%,>80
+211,Spirometry (FEV1 %),83,%,>80
+212,Total Cholesterol,185,mg/dL,<200
+212,HbA1c,5.1,%,<5.7
+213,Spirometry (FEV1 %),65,%,>80
+214,Spirometry (FEV1 %),56,%,>80
+215,Blood Pressure,133/96,mmHg,120/80
+215,Total Cholesterol,210,mg/dL,<200
+216,Blood Pressure,138/100,mmHg,120/80
+216,Total Cholesterol,252,mg/dL,<200
+217,Blood Pressure,134/105,mmHg,120/80
+217,Total Cholesterol,203,mg/dL,<200
+218,Blood Pressure,148/97,mmHg,120/80
+218,Total Cholesterol,228,mg/dL,<200
+219,Blood Pressure,135/91,mmHg,120/80
+219,Total Cholesterol,166,mg/dL,<200
+220,Blood Pressure,143/87,mmHg,120/80
+220,Total Cholesterol,203,mg/dL,<200
+221,Blood Pressure,135/97,mmHg,120/80
+221,Total Cholesterol,190,mg/dL,<200
+222,Blood Pressure,137/97,mmHg,120/80
+222,Total Cholesterol,228,mg/dL,<200
+223,Blood Pressure,131/90,mmHg,120/80
+223,Total Cholesterol,237,mg/dL,<200
+224,Blood Pressure,144/94,mmHg,120/80
+224,Total Cholesterol,243,mg/dL,<200
+225,Spirometry (FEV1 %),83,%,>80
+226,Spirometry (FEV1 %),68,%,>80
+227,Spirometry (FEV1 %),71,%,>80
+228,Spirometry (FEV1 %),61,%,>80
+229,Spirometry (FEV1 %),58,%,>80
+230,Spirometry (FEV1 %),47,%,>80
+231,Spirometry (FEV1 %),65,%,>80
+232,Spirometry (FEV1 %),48,%,>80
+233,Spirometry (FEV1 %),69,%,>80
+234,Spirometry (FEV1 %),66,%,>80
+235,Total Cholesterol,190,mg/dL,<200
+235,HbA1c,5.1,%,<5.7
+236,HbA1c,7.3,%,<5.7
+236,Fasting Glucose,153,mg/dL,70-99
+237,Total Cholesterol,189,mg/dL,<200
+237,HbA1c,5.2,%,<5.7
+238,Total Cholesterol,205,mg/dL,<200
+238,HbA1c,5.3,%,<5.7
+239,Total Cholesterol,169,mg/dL,<200
+239,HbA1c,4.8,%,<5.7
+240,Total Cholesterol,225,mg/dL,<200
+240,LDL-C,153,mg/dL,<100
+241,Total Cholesterol,292,mg/dL,<200
+241,LDL-C,175,mg/dL,<100
+242,Blood Pressure,140/92,mmHg,120/80
+243,Blood Pressure,128/103,mmHg,120/80
+244,Blood Pressure,137/96,mmHg,120/80
+244,Total Cholesterol,226,mg/dL,<200
+245,Blood Pressure,140/101,mmHg,120/80
+245,Total Cholesterol,237,mg/dL,<200
+246,Blood Pressure,134/91,mmHg,120/80
+246,Total Cholesterol,218,mg/dL,<200
+247,HbA1c,7.6,%,<5.7
+247,Fasting Glucose,138,mg/dL,70-99
+248,HbA1c,6.3,%,<5.7
+248,Fasting Glucose,113,mg/dL,70-99
+249,Spirometry (FEV1 %),64,%,>80
+250,Spirometry (FEV1 %),74,%,>80
+251,Spirometry (FEV1 %),73,%,>80
+252,Total Cholesterol,185,mg/dL,<200
+252,HbA1c,5.1,%,<5.7
+253,Total Cholesterol,174,mg/dL,<200
+253,HbA1c,5.3,%,<5.7
+254,Blood Pressure,131/89,mmHg,120/80
+254,Total Cholesterol,233,mg/dL,<200
+255,Blood Pressure,139/95,mmHg,120/80
+255,Total Cholesterol,179,mg/dL,<200
+256,Blood Pressure,139/93,mmHg,120/80
+256,Total Cholesterol,212,mg/dL,<200
+257,Blood Pressure,139/82,mmHg,120/80
+257,Total Cholesterol,229,mg/dL,<200
+258,Total Cholesterol,167,mg/dL,<200
+258,LDL-C,163,mg/dL,<100
+259,Total Cholesterol,197,mg/dL,<200
+259,HbA1c,5.4,%,<5.7
+260,Total Cholesterol,186,mg/dL,<200
+260,HbA1c,4.8,%,<5.7
+261,Total Cholesterol,159,mg/dL,<200
+261,HbA1c,5.2,%,<5.7
+262,Spirometry (FEV1 %),58,%,>80
+263,Spirometry (FEV1 %),77,%,>80
+264,HbA1c,8.4,%,<5.7
+264,Fasting Glucose,132,mg/dL,70-99
+265,HbA1c,7.9,%,<5.7
+265,Fasting Glucose,164,mg/dL,70-99
+266,Total Cholesterol,241,mg/dL,<200
+266,LDL-C,159,mg/dL,<100
+267,Total Cholesterol,225,mg/dL,<200
+267,LDL-C,166,mg/dL,<100
+268,Total Cholesterol,257,mg/dL,<200
+268,LDL-C,167,mg/dL,<100
+269,HbA1c,6.6,%,<5.7
+269,Fasting Glucose,185,mg/dL,70-99
+270,Blood Pressure,135/79,mmHg,120/80
+270,Total Cholesterol,213,mg/dL,<200
+271,Blood Pressure,131/92,mmHg,120/80
+271,Total Cholesterol,196,mg/dL,<200
+272,Spirometry (FEV1 %),82,%,>80
+273,Spirometry (FEV1 %),69,%,>80
+274,Blood Pressure,137/91,mmHg,120/80
+274,Total Cholesterol,221,mg/dL,<200
+275,Blood Pressure,131/87,mmHg,120/80
+275,Total Cholesterol,175,mg/dL,<200
+276,Blood Pressure,133/93,mmHg,120/80
+276,Total Cholesterol,228,mg/dL,<200
+277,Total Cholesterol,303,mg/dL,<200
+277,LDL-C,173,mg/dL,<100
+278,Total Cholesterol,293,mg/dL,<200
+278,LDL-C,176,mg/dL,<100
+279,Total Cholesterol,230,mg/dL,<200
+279,LDL-C,168,mg/dL,<100
+280,Total Cholesterol,283,mg/dL,<200
+280,LDL-C,142,mg/dL,<100
+281,Spirometry (FEV1 %),59,%,>80
+282,Spirometry (FEV1 %),63,%,>80
+283,Blood Pressure,143/92,mmHg,120/80
+284,Total Cholesterol,286,mg/dL,<200
+284,LDL-C,180,mg/dL,<100
+285,Total Cholesterol,258,mg/dL,<200
+285,LDL-C,160,mg/dL,<100
+286,Total Cholesterol,196,mg/dL,<200
+286,LDL-C,201,mg/dL,<100
+287,Total Cholesterol,258,mg/dL,<200
+287,LDL-C,144,mg/dL,<100
+288,Total Cholesterol,232,mg/dL,<200
+288,LDL-C,168,mg/dL,<100
+289,Blood Pressure,146/86,mmHg,120/80
+289,Total Cholesterol,171,mg/dL,<200
+290,Blood Pressure,144/91,mmHg,120/80
+290,Total Cholesterol,202,mg/dL,<200
+291,Blood Pressure,145/97,mmHg,120/80
+291,Total Cholesterol,165,mg/dL,<200
+292,Spirometry (FEV1 %),69,%,>80
+293,HbA1c,9.0,%,<5.7
+293,Fasting Glucose,133,mg/dL,70-99
+294,HbA1c,9.2,%,<5.7
+294,Fasting Glucose,174,mg/dL,70-99
+295,Total Cholesterol,180,mg/dL,<200
+295,HbA1c,5.3,%,<5.7
+296,Total Cholesterol,184,mg/dL,<200
+296,HbA1c,5.4,%,<5.7
+297,Total Cholesterol,155,mg/dL,<200
+297,HbA1c,5.3,%,<5.7
+298,Blood Pressure,150/90,mmHg,120/80
+298,Total Cholesterol,259,mg/dL,<200
+299,Blood Pressure,147/99,mmHg,120/80
+299,Total Cholesterol,240,mg/dL,<200
+300,Blood Pressure,148/88,mmHg,120/80
+300,Total Cholesterol,215,mg/dL,<200
+301,Total Cholesterol,161,mg/dL,<200
+301,HbA1c,5.1,%,<5.7
+302,Total Cholesterol,173,mg/dL,<200
+302,HbA1c,5.1,%,<5.7
+303,Total Cholesterol,265,mg/dL,<200
+303,LDL-C,176,mg/dL,<100
+304,Total Cholesterol,331,mg/dL,<200
+304,LDL-C,163,mg/dL,<100
+305,Blood Pressure,147/88,mmHg,120/80
+306,Blood Pressure,148/82,mmHg,120/80
+307,Blood Pressure,145/94,mmHg,120/80
+308,Blood Pressure,141/90,mmHg,120/80
+309,Blood Pressure,141/98,mmHg,120/80
+310,Total Cholesterol,258,mg/dL,<200
+310,LDL-C,159,mg/dL,<100
+311,Blood Pressure,134/95,mmHg,120/80
+312,Blood Pressure,138/97,mmHg,120/80
+313,Blood Pressure,167/87,mmHg,120/80
+314,HbA1c,6.5,%,<5.7
+314,Fasting Glucose,121,mg/dL,70-99
+315,Blood Pressure,150/96,mmHg,120/80
+316,Blood Pressure,141/96,mmHg,120/80
+317,Blood Pressure,135/88,mmHg,120/80
+317,Total Cholesterol,223,mg/dL,<200
+318,Blood Pressure,136/100,mmHg,120/80
+318,Total Cholesterol,250,mg/dL,<200
+319,Blood Pressure,131/83,mmHg,120/80
+320,Total Cholesterol,232,mg/dL,<200
+320,LDL-C,145,mg/dL,<100
+321,Total Cholesterol,278,mg/dL,<200
+321,LDL-C,135,mg/dL,<100
+322,Total Cholesterol,270,mg/dL,<200
+322,LDL-C,138,mg/dL,<100
+323,HbA1c,6.7,%,<5.7
+323,Fasting Glucose,115,mg/dL,70-99
+324,HbA1c,7.7,%,<5.7
+324,Fasting Glucose,175,mg/dL,70-99
+325,Blood Pressure,138/101,mmHg,120/80
+325,Total Cholesterol,243,mg/dL,<200
+326,Blood Pressure,141/82,mmHg,120/80
+326,Total Cholesterol,229,mg/dL,<200
+327,Total Cholesterol,169,mg/dL,<200
+327,HbA1c,5.3,%,<5.7
+328,Total Cholesterol,150,mg/dL,<200
+328,HbA1c,5.2,%,<5.7
+329,Blood Pressure,143/89,mmHg,120/80
+329,Total Cholesterol,225,mg/dL,<200
+330,Spirometry (FEV1 %),75,%,>80
+331,Blood Pressure,149/90,mmHg,120/80
+332,Blood Pressure,138/87,mmHg,120/80
+333,Blood Pressure,124/89,mmHg,120/80
+333,Total Cholesterol,258,mg/dL,<200
+334,Blood Pressure,142/85,mmHg,120/80
+334,Total Cholesterol,245,mg/dL,<200
+335,Blood Pressure,150/93,mmHg,120/80
+335,Total Cholesterol,271,mg/dL,<200
+336,Spirometry (FEV1 %),75,%,>80
+337,Spirometry (FEV1 %),75,%,>80
+338,Spirometry (FEV1 %),77,%,>80
+339,HbA1c,8.4,%,<5.7
+339,Fasting Glucose,164,mg/dL,70-99
+340,Total Cholesterol,182,mg/dL,<200
+340,HbA1c,5.1,%,<5.7
+341,Total Cholesterol,165,mg/dL,<200
+341,HbA1c,5.3,%,<5.7
+342,Total Cholesterol,189,mg/dL,<200
+342,HbA1c,5.3,%,<5.7
+343,Blood Pressure,142/96,mmHg,120/80
+343,Total Cholesterol,215,mg/dL,<200
+344,Blood Pressure,131/100,mmHg,120/80
+344,Total Cholesterol,245,mg/dL,<200
+345,Blood Pressure,138/94,mmHg,120/80
+345,Total Cholesterol,251,mg/dL,<200
+346,Blood Pressure,138/88,mmHg,120/80
+347,HbA1c,9.0,%,<5.7
+347,Fasting Glucose,168,mg/dL,70-99
+348,HbA1c,7.9,%,<5.7
+348,Fasting Glucose,158,mg/dL,70-99
+349,HbA1c,8.4,%,<5.7
+349,Fasting Glucose,179,mg/dL,70-99
+350,Blood Pressure,155/91,mmHg,120/80
+351,Total Cholesterol,261,mg/dL,<200
+351,LDL-C,126,mg/dL,<100
+352,Total Cholesterol,257,mg/dL,<200
+352,LDL-C,139,mg/dL,<100
+353,Total Cholesterol,226,mg/dL,<200
+353,LDL-C,183,mg/dL,<100
+354,Blood Pressure,147/91,mmHg,120/80
+355,Spirometry (FEV1 %),69,%,>80
+356,Spirometry (FEV1 %),65,%,>80
+357,Blood Pressure,144/96,mmHg,120/80
+358,Blood Pressure,151/76,mmHg,120/80
+359,Blood Pressure,135/97,mmHg,120/80
+359,Total Cholesterol,261,mg/dL,<200
+360,Blood Pressure,153/89,mmHg,120/80
+360,Total Cholesterol,215,mg/dL,<200
+361,Blood Pressure,137/88,mmHg,120/80
+361,Total Cholesterol,174,mg/dL,<200
+362,HbA1c,5.6,%,<5.7
+362,Fasting Glucose,119,mg/dL,70-99
+363,HbA1c,6.4,%,<5.7
+363,Fasting Glucose,113,mg/dL,70-99
+364,Total Cholesterol,219,mg/dL,<200
+364,LDL-C,152,mg/dL,<100
+365,Total Cholesterol,245,mg/dL,<200
+365,LDL-C,175,mg/dL,<100
+366,Total Cholesterol,226,mg/dL,<200
+366,LDL-C,135,mg/dL,<100
+367,Blood Pressure,159/95,mmHg,120/80
+368,Blood Pressure,170/86,mmHg,120/80
+369,Blood Pressure,135/89,mmHg,120/80
+370,Spirometry (FEV1 %),55,%,>80
+371,Spirometry (FEV1 %),69,%,>80
+372,Spirometry (FEV1 %),54,%,>80
+373,Blood Pressure,142/91,mmHg,120/80
+373,Total Cholesterol,174,mg/dL,<200
+374,Blood Pressure,127/98,mmHg,120/80
+374,Total Cholesterol,202,mg/dL,<200
+375,Blood Pressure,133/92,mmHg,120/80
+375,Total Cholesterol,204,mg/dL,<200
+376,Blood Pressure,131/93,mmHg,120/80
+376,Total Cholesterol,194,mg/dL,<200
+377,Blood Pressure,124/82,mmHg,120/80
+378,Blood Pressure,132/87,mmHg,120/80
+379,Blood Pressure,141/102,mmHg,120/80
+380,Total Cholesterol,185,mg/dL,<200
+380,HbA1c,5.1,%,<5.7
+381,Total Cholesterol,307,mg/dL,<200
+381,LDL-C,144,mg/dL,<100
+382,Total Cholesterol,246,mg/dL,<200
+382,LDL-C,163,mg/dL,<100
+383,Total Cholesterol,265,mg/dL,<200
+383,LDL-C,175,mg/dL,<100
+384,HbA1c,5.8,%,<5.7
+384,Fasting Glucose,107,mg/dL,70-99
+385,HbA1c,8.5,%,<5.7
+385,Fasting Glucose,167,mg/dL,70-99
+386,Total Cholesterol,140,mg/dL,<200
+386,HbA1c,4.9,%,<5.7
+387,Total Cholesterol,213,mg/dL,<200
+387,HbA1c,5.4,%,<5.7
+388,Blood Pressure,159/87,mmHg,120/80
+389,HbA1c,6.8,%,<5.7
+389,Fasting Glucose,190,mg/dL,70-99
+390,HbA1c,7.7,%,<5.7
+390,Fasting Glucose,154,mg/dL,70-99
+391,Total Cholesterol,238,mg/dL,<200
+391,LDL-C,235,mg/dL,<100
+392,Total Cholesterol,279,mg/dL,<200
+392,LDL-C,136,mg/dL,<100
+393,Spirometry (FEV1 %),65,%,>80
+394,Spirometry (FEV1 %),56,%,>80
+395,Total Cholesterol,282,mg/dL,<200
+395,LDL-C,161,mg/dL,<100
+396,Total Cholesterol,273,mg/dL,<200
+396,LDL-C,152,mg/dL,<100
+397,Total Cholesterol,241,mg/dL,<200
+397,LDL-C,182,mg/dL,<100
+398,Spirometry (FEV1 %),57,%,>80
+399,Blood Pressure,162/87,mmHg,120/80
+400,Blood Pressure,154/86,mmHg,120/80
+401,Blood Pressure,151/97,mmHg,120/80
+402,HbA1c,8.8,%,<5.7
+402,Fasting Glucose,187,mg/dL,70-99
+403,Blood Pressure,137/90,mmHg,120/80
+403,Total Cholesterol,216,mg/dL,<200
+404,Blood Pressure,152/96,mmHg,120/80
+404,Total Cholesterol,244,mg/dL,<200
+405,Blood Pressure,140/84,mmHg,120/80
+405,Total Cholesterol,168,mg/dL,<200
+406,Spirometry (FEV1 %),80,%,>80

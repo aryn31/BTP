@@ -1,0 +1,407 @@
+EncounterID,PatientID,Date,Notes
+1,1,2024-08-09,Geriatric follow-up. BP=145/92 mmHg.
+2,2,2024-09-28,Geriatric follow-up. BP=144/80 mmHg.
+3,3,2025-03-19,"Cardiovascular review. Chol=277, LDL=173 mg/dL."
+4,3,2024-07-31,"Cardiovascular review. Chol=274, LDL=181 mg/dL."
+5,3,2024-07-08,"Cardiovascular review. Chol=225, LDL=151 mg/dL."
+6,4,2024-12-15,"Cardiovascular review. Chol=250, LDL=166 mg/dL."
+7,5,2025-06-13,"Routine health check. Chol=199 mg/dL, HbA1c=5.6%."
+8,5,2024-05-01,"Routine health check. Chol=152 mg/dL, HbA1c=5.3%."
+9,6,2025-08-03,Geriatric follow-up. BP=146/105 mmHg.
+10,7,2025-07-02,Asthma/respiratory symptom review. FEV1=56% predicted.
+11,7,2025-04-28,Asthma/respiratory symptom review. FEV1=73% predicted.
+12,8,2024-11-29,"Diabetes follow-up. HbA1c=6.5%, FPG=100 mg/dL."
+13,9,2025-05-26,Asthma/respiratory symptom review. FEV1=73% predicted.
+14,10,2024-05-27,"Diabetes follow-up. HbA1c=6.0%, FPG=128 mg/dL."
+15,10,2025-02-19,"Diabetes follow-up. HbA1c=6.0%, FPG=132 mg/dL."
+16,11,2024-04-28,"Weight and blood pressure management. BP=142/99 mmHg, Chol=250."
+17,12,2025-06-26,"Diabetes follow-up. HbA1c=8.8%, FPG=170 mg/dL."
+18,12,2025-03-24,"Diabetes follow-up. HbA1c=8.0%, FPG=157 mg/dL."
+19,13,2024-04-16,"Routine health check. Chol=159 mg/dL, HbA1c=5.1%."
+20,13,2024-10-02,"Routine health check. Chol=168 mg/dL, HbA1c=5.2%."
+21,13,2024-09-25,"Routine health check. Chol=181 mg/dL, HbA1c=5.3%."
+22,14,2025-08-31,"Cardiovascular review. Chol=231, LDL=188 mg/dL."
+23,15,2025-05-17,"Diabetes follow-up. HbA1c=7.5%, FPG=113 mg/dL."
+24,15,2025-03-04,"Diabetes follow-up. HbA1c=8.1%, FPG=157 mg/dL."
+25,16,2025-03-29,"Weight and blood pressure management. BP=136/86 mmHg, Chol=223."
+26,16,2024-06-12,"Weight and blood pressure management. BP=153/94 mmHg, Chol=214."
+27,17,2024-10-31,"Routine health check. Chol=177 mg/dL, HbA1c=5.0%."
+28,18,2025-03-27,Geriatric follow-up. BP=137/91 mmHg.
+29,18,2025-03-18,Geriatric follow-up. BP=158/97 mmHg.
+30,18,2025-04-03,Geriatric follow-up. BP=139/83 mmHg.
+31,19,2024-07-22,"Diabetes follow-up. HbA1c=7.1%, FPG=166 mg/dL."
+32,19,2025-06-07,"Diabetes follow-up. HbA1c=10.3%, FPG=137 mg/dL."
+33,20,2024-09-14,Geriatric follow-up. BP=120/91 mmHg.
+34,20,2024-08-13,Geriatric follow-up. BP=160/100 mmHg.
+35,20,2024-06-05,Geriatric follow-up. BP=144/86 mmHg.
+36,21,2024-06-28,"Weight and blood pressure management. BP=141/101 mmHg, Chol=189."
+37,22,2025-02-05,Asthma/respiratory symptom review. FEV1=63% predicted.
+38,22,2025-03-16,Asthma/respiratory symptom review. FEV1=52% predicted.
+39,23,2024-12-27,Asthma/respiratory symptom review. FEV1=64% predicted.
+40,23,2025-08-18,Asthma/respiratory symptom review. FEV1=66% predicted.
+41,24,2025-03-13,"Weight and blood pressure management. BP=142/89 mmHg, Chol=180."
+42,24,2025-02-19,"Weight and blood pressure management. BP=154/100 mmHg, Chol=188."
+43,25,2024-09-08,"Weight and blood pressure management. BP=128/84 mmHg, Chol=206."
+44,25,2025-02-25,"Weight and blood pressure management. BP=148/105 mmHg, Chol=180."
+45,26,2025-02-24,Asthma/respiratory symptom review. FEV1=58% predicted.
+46,26,2025-07-28,Asthma/respiratory symptom review. FEV1=61% predicted.
+47,26,2024-12-16,Asthma/respiratory symptom review. FEV1=63% predicted.
+48,27,2024-06-07,Geriatric follow-up. BP=146/94 mmHg.
+49,27,2024-08-13,Geriatric follow-up. BP=142/94 mmHg.
+50,28,2025-02-05,Asthma/respiratory symptom review. FEV1=80% predicted.
+51,28,2024-12-25,Asthma/respiratory symptom review. FEV1=59% predicted.
+52,28,2024-11-21,Asthma/respiratory symptom review. FEV1=70% predicted.
+53,29,2025-01-12,"Diabetes follow-up. HbA1c=7.4%, FPG=185 mg/dL."
+54,29,2025-07-02,"Diabetes follow-up. HbA1c=7.7%, FPG=176 mg/dL."
+55,29,2024-08-17,"Diabetes follow-up. HbA1c=8.0%, FPG=168 mg/dL."
+56,30,2025-04-05,"Diabetes follow-up. HbA1c=8.7%, FPG=178 mg/dL."
+57,30,2024-06-14,"Diabetes follow-up. HbA1c=6.2%, FPG=189 mg/dL."
+58,30,2025-08-26,"Diabetes follow-up. HbA1c=7.9%, FPG=171 mg/dL."
+59,31,2025-01-14,"Weight and blood pressure management. BP=145/91 mmHg, Chol=198."
+60,31,2025-04-02,"Weight and blood pressure management. BP=147/90 mmHg, Chol=160."
+61,32,2025-05-06,"Weight and blood pressure management. BP=138/93 mmHg, Chol=174."
+62,33,2024-09-14,"Cardiovascular review. Chol=241, LDL=205 mg/dL."
+63,33,2025-02-07,"Cardiovascular review. Chol=270, LDL=162 mg/dL."
+64,34,2024-04-09,Asthma/respiratory symptom review. FEV1=67% predicted.
+65,35,2025-03-24,Asthma/respiratory symptom review. FEV1=82% predicted.
+66,36,2024-12-27,"Cardiovascular review. Chol=263, LDL=172 mg/dL."
+67,36,2024-04-21,"Cardiovascular review. Chol=240, LDL=174 mg/dL."
+68,36,2024-07-19,"Cardiovascular review. Chol=246, LDL=176 mg/dL."
+69,37,2024-11-23,"Diabetes follow-up. HbA1c=6.1%, FPG=102 mg/dL."
+70,37,2025-05-27,"Diabetes follow-up. HbA1c=7.5%, FPG=173 mg/dL."
+71,38,2024-04-17,"Diabetes follow-up. HbA1c=9.2%, FPG=126 mg/dL."
+72,39,2025-06-20,"Diabetes follow-up. HbA1c=7.9%, FPG=141 mg/dL."
+73,39,2025-06-14,"Diabetes follow-up. HbA1c=6.0%, FPG=95 mg/dL."
+74,39,2024-07-28,"Diabetes follow-up. HbA1c=7.8%, FPG=183 mg/dL."
+75,40,2025-08-09,Geriatric follow-up. BP=126/92 mmHg.
+76,41,2025-01-08,"Routine health check. Chol=150 mg/dL, HbA1c=4.8%."
+77,42,2024-11-13,"Weight and blood pressure management. BP=140/83 mmHg, Chol=224."
+78,42,2025-04-03,"Weight and blood pressure management. BP=158/95 mmHg, Chol=219."
+79,43,2025-02-27,"Cardiovascular review. Chol=189, LDL=166 mg/dL."
+80,43,2025-07-17,"Cardiovascular review. Chol=243, LDL=123 mg/dL."
+81,43,2025-03-18,"Cardiovascular review. Chol=262, LDL=183 mg/dL."
+82,44,2024-08-27,"Diabetes follow-up. HbA1c=6.6%, FPG=177 mg/dL."
+83,44,2024-06-25,"Diabetes follow-up. HbA1c=9.4%, FPG=206 mg/dL."
+84,44,2024-07-24,"Diabetes follow-up. HbA1c=9.0%, FPG=189 mg/dL."
+85,45,2025-08-09,"Routine health check. Chol=162 mg/dL, HbA1c=5.2%."
+86,46,2024-06-21,"Cardiovascular review. Chol=294, LDL=158 mg/dL."
+87,47,2024-08-01,Geriatric follow-up. BP=127/100 mmHg.
+88,47,2024-05-28,Geriatric follow-up. BP=135/96 mmHg.
+89,48,2025-07-31,"Cardiovascular review. Chol=276, LDL=189 mg/dL."
+90,48,2024-07-30,"Cardiovascular review. Chol=254, LDL=161 mg/dL."
+91,48,2024-11-02,"Cardiovascular review. Chol=236, LDL=144 mg/dL."
+92,49,2025-06-18,Asthma/respiratory symptom review. FEV1=70% predicted.
+93,49,2025-07-30,Asthma/respiratory symptom review. FEV1=78% predicted.
+94,49,2025-06-29,Asthma/respiratory symptom review. FEV1=74% predicted.
+95,50,2025-03-25,"Cardiovascular review. Chol=193, LDL=183 mg/dL."
+96,50,2025-02-22,"Cardiovascular review. Chol=261, LDL=174 mg/dL."
+97,51,2025-06-14,Geriatric follow-up. BP=146/83 mmHg.
+98,52,2024-09-30,"Diabetes follow-up. HbA1c=7.7%, FPG=150 mg/dL."
+99,52,2024-10-12,"Diabetes follow-up. HbA1c=7.5%, FPG=119 mg/dL."
+100,52,2024-12-04,"Diabetes follow-up. HbA1c=6.0%, FPG=118 mg/dL."
+101,53,2025-07-05,"Weight and blood pressure management. BP=127/81 mmHg, Chol=213."
+102,53,2025-07-07,"Weight and blood pressure management. BP=140/93 mmHg, Chol=222."
+103,53,2024-09-19,"Weight and blood pressure management. BP=133/91 mmHg, Chol=183."
+104,54,2025-02-19,Asthma/respiratory symptom review. FEV1=65% predicted.
+105,55,2025-08-22,Asthma/respiratory symptom review. FEV1=66% predicted.
+106,55,2024-04-25,Asthma/respiratory symptom review. FEV1=68% predicted.
+107,56,2025-07-05,"Cardiovascular review. Chol=250, LDL=165 mg/dL."
+108,56,2025-05-25,"Cardiovascular review. Chol=206, LDL=153 mg/dL."
+109,56,2025-03-07,"Cardiovascular review. Chol=207, LDL=182 mg/dL."
+110,57,2024-11-03,Geriatric follow-up. BP=135/90 mmHg.
+111,57,2024-12-16,Geriatric follow-up. BP=147/82 mmHg.
+112,58,2024-04-17,"Weight and blood pressure management. BP=142/88 mmHg, Chol=210."
+113,58,2024-12-17,"Weight and blood pressure management. BP=135/93 mmHg, Chol=229."
+114,59,2025-07-15,"Routine health check. Chol=187 mg/dL, HbA1c=5.4%."
+115,59,2025-02-16,"Routine health check. Chol=180 mg/dL, HbA1c=5.3%."
+116,60,2025-03-27,Geriatric follow-up. BP=131/95 mmHg.
+117,60,2025-05-15,Geriatric follow-up. BP=127/91 mmHg.
+118,61,2024-09-20,"Weight and blood pressure management. BP=152/82 mmHg, Chol=269."
+119,61,2024-04-23,"Weight and blood pressure management. BP=140/88 mmHg, Chol=230."
+120,62,2024-12-29,"Cardiovascular review. Chol=277, LDL=168 mg/dL."
+121,62,2024-11-22,"Cardiovascular review. Chol=256, LDL=188 mg/dL."
+122,62,2024-09-02,"Cardiovascular review. Chol=281, LDL=150 mg/dL."
+123,63,2025-02-22,"Routine health check. Chol=189 mg/dL, HbA1c=5.4%."
+124,63,2024-04-10,"Routine health check. Chol=195 mg/dL, HbA1c=4.8%."
+125,63,2025-05-10,"Routine health check. Chol=180 mg/dL, HbA1c=4.9%."
+126,64,2024-05-08,"Routine health check. Chol=189 mg/dL, HbA1c=5.0%."
+127,64,2024-12-05,"Routine health check. Chol=188 mg/dL, HbA1c=5.4%."
+128,64,2024-07-31,"Routine health check. Chol=204 mg/dL, HbA1c=5.2%."
+129,65,2024-04-20,"Cardiovascular review. Chol=238, LDL=121 mg/dL."
+130,65,2024-05-01,"Cardiovascular review. Chol=302, LDL=133 mg/dL."
+131,65,2024-12-16,"Cardiovascular review. Chol=252, LDL=188 mg/dL."
+132,66,2025-06-04,Asthma/respiratory symptom review. FEV1=60% predicted.
+133,66,2024-07-03,Asthma/respiratory symptom review. FEV1=72% predicted.
+134,66,2024-07-30,Asthma/respiratory symptom review. FEV1=62% predicted.
+135,67,2025-05-27,Geriatric follow-up. BP=150/89 mmHg.
+136,67,2024-06-17,Geriatric follow-up. BP=154/90 mmHg.
+137,67,2024-06-15,Geriatric follow-up. BP=143/88 mmHg.
+138,68,2025-07-11,"Cardiovascular review. Chol=241, LDL=124 mg/dL."
+139,68,2024-09-28,"Cardiovascular review. Chol=256, LDL=164 mg/dL."
+140,69,2025-05-04,"Weight and blood pressure management. BP=155/99 mmHg, Chol=254."
+141,70,2024-12-10,"Cardiovascular review. Chol=290, LDL=183 mg/dL."
+142,70,2024-11-18,"Cardiovascular review. Chol=288, LDL=185 mg/dL."
+143,71,2025-05-10,"Cardiovascular review. Chol=237, LDL=183 mg/dL."
+144,71,2025-05-22,"Cardiovascular review. Chol=222, LDL=166 mg/dL."
+145,71,2025-05-03,"Cardiovascular review. Chol=271, LDL=113 mg/dL."
+146,72,2025-07-26,"Routine health check. Chol=180 mg/dL, HbA1c=5.6%."
+147,72,2024-09-18,"Routine health check. Chol=179 mg/dL, HbA1c=5.4%."
+148,72,2025-06-28,"Routine health check. Chol=159 mg/dL, HbA1c=5.4%."
+149,73,2024-10-11,Asthma/respiratory symptom review. FEV1=66% predicted.
+150,74,2024-06-03,Asthma/respiratory symptom review. FEV1=60% predicted.
+151,74,2024-10-15,Asthma/respiratory symptom review. FEV1=64% predicted.
+152,75,2025-03-22,Asthma/respiratory symptom review. FEV1=62% predicted.
+153,75,2024-08-22,Asthma/respiratory symptom review. FEV1=67% predicted.
+154,75,2024-04-14,Asthma/respiratory symptom review. FEV1=80% predicted.
+155,76,2024-08-28,"Cardiovascular review. Chol=274, LDL=191 mg/dL."
+156,76,2024-08-07,"Cardiovascular review. Chol=208, LDL=176 mg/dL."
+157,76,2024-04-10,"Cardiovascular review. Chol=276, LDL=187 mg/dL."
+158,77,2025-02-26,"Weight and blood pressure management. BP=129/91 mmHg, Chol=206."
+159,77,2025-02-26,"Weight and blood pressure management. BP=143/102 mmHg, Chol=261."
+160,77,2025-08-06,"Weight and blood pressure management. BP=125/95 mmHg, Chol=216."
+161,78,2025-08-12,"Diabetes follow-up. HbA1c=6.1%, FPG=110 mg/dL."
+162,78,2025-06-23,"Diabetes follow-up. HbA1c=7.5%, FPG=172 mg/dL."
+163,78,2024-12-10,"Diabetes follow-up. HbA1c=9.5%, FPG=189 mg/dL."
+164,79,2024-06-12,Asthma/respiratory symptom review. FEV1=49% predicted.
+165,79,2024-09-14,Asthma/respiratory symptom review. FEV1=63% predicted.
+166,79,2024-10-14,Asthma/respiratory symptom review. FEV1=54% predicted.
+167,80,2025-06-16,"Routine health check. Chol=177 mg/dL, HbA1c=5.4%."
+168,80,2025-05-20,"Routine health check. Chol=161 mg/dL, HbA1c=5.2%."
+169,81,2025-04-12,Asthma/respiratory symptom review. FEV1=70% predicted.
+170,82,2024-04-30,Asthma/respiratory symptom review. FEV1=69% predicted.
+171,82,2024-09-01,Asthma/respiratory symptom review. FEV1=81% predicted.
+172,83,2025-05-05,"Routine health check. Chol=167 mg/dL, HbA1c=5.3%."
+173,83,2025-02-02,"Routine health check. Chol=174 mg/dL, HbA1c=5.2%."
+174,83,2025-01-03,"Routine health check. Chol=183 mg/dL, HbA1c=5.2%."
+175,84,2024-07-25,"Diabetes follow-up. HbA1c=8.8%, FPG=202 mg/dL."
+176,84,2024-04-27,"Diabetes follow-up. HbA1c=8.5%, FPG=176 mg/dL."
+177,85,2025-01-10,"Routine health check. Chol=158 mg/dL, HbA1c=5.0%."
+178,85,2024-08-30,"Routine health check. Chol=205 mg/dL, HbA1c=5.0%."
+179,85,2024-08-20,"Routine health check. Chol=190 mg/dL, HbA1c=5.1%."
+180,86,2024-08-12,"Cardiovascular review. Chol=259, LDL=118 mg/dL."
+181,86,2025-03-17,"Cardiovascular review. Chol=203, LDL=149 mg/dL."
+182,87,2024-08-15,Geriatric follow-up. BP=135/96 mmHg.
+183,87,2025-02-22,Geriatric follow-up. BP=141/88 mmHg.
+184,88,2024-06-21,Asthma/respiratory symptom review. FEV1=66% predicted.
+185,88,2024-12-09,Asthma/respiratory symptom review. FEV1=69% predicted.
+186,89,2024-08-16,"Weight and blood pressure management. BP=138/97 mmHg, Chol=231."
+187,90,2025-02-21,"Routine health check. Chol=178 mg/dL, HbA1c=5.1%."
+188,90,2024-04-26,"Routine health check. Chol=188 mg/dL, HbA1c=5.3%."
+189,91,2025-04-13,Asthma/respiratory symptom review. FEV1=70% predicted.
+190,92,2025-06-22,"Diabetes follow-up. HbA1c=9.6%, FPG=171 mg/dL."
+191,93,2024-09-10,Geriatric follow-up. BP=124/88 mmHg.
+192,93,2025-06-17,Geriatric follow-up. BP=132/91 mmHg.
+193,94,2025-07-16,"Diabetes follow-up. HbA1c=9.0%, FPG=191 mg/dL."
+194,94,2025-08-06,"Diabetes follow-up. HbA1c=6.7%, FPG=145 mg/dL."
+195,95,2025-03-21,Asthma/respiratory symptom review. FEV1=67% predicted.
+196,95,2024-07-31,Asthma/respiratory symptom review. FEV1=57% predicted.
+197,95,2025-04-10,Asthma/respiratory symptom review. FEV1=67% predicted.
+198,96,2024-05-11,"Weight and blood pressure management. BP=131/87 mmHg, Chol=191."
+199,96,2024-08-29,"Weight and blood pressure management. BP=128/93 mmHg, Chol=234."
+200,96,2025-06-15,"Weight and blood pressure management. BP=145/91 mmHg, Chol=191."
+201,97,2024-05-06,"Diabetes follow-up. HbA1c=7.6%, FPG=156 mg/dL."
+202,98,2025-08-24,"Routine health check. Chol=176 mg/dL, HbA1c=5.5%."
+203,99,2025-01-09,"Cardiovascular review. Chol=264, LDL=170 mg/dL."
+204,99,2024-04-13,"Cardiovascular review. Chol=264, LDL=176 mg/dL."
+205,100,2025-08-09,"Cardiovascular review. Chol=215, LDL=161 mg/dL."
+206,100,2024-09-16,"Cardiovascular review. Chol=198, LDL=155 mg/dL."
+207,101,2025-07-13,Asthma/respiratory symptom review. FEV1=74% predicted.
+208,102,2024-09-01,"Weight and blood pressure management. BP=137/88 mmHg, Chol=196."
+209,103,2025-08-19,"Cardiovascular review. Chol=240, LDL=151 mg/dL."
+210,104,2024-12-23,Asthma/respiratory symptom review. FEV1=53% predicted.
+211,104,2025-06-19,Asthma/respiratory symptom review. FEV1=83% predicted.
+212,105,2024-05-04,"Routine health check. Chol=185 mg/dL, HbA1c=5.1%."
+213,106,2025-04-11,Asthma/respiratory symptom review. FEV1=65% predicted.
+214,106,2024-07-10,Asthma/respiratory symptom review. FEV1=56% predicted.
+215,107,2025-07-26,"Weight and blood pressure management. BP=133/96 mmHg, Chol=210."
+216,107,2024-10-30,"Weight and blood pressure management. BP=138/100 mmHg, Chol=252."
+217,108,2024-08-15,"Weight and blood pressure management. BP=134/105 mmHg, Chol=203."
+218,108,2024-11-08,"Weight and blood pressure management. BP=148/97 mmHg, Chol=228."
+219,108,2025-05-11,"Weight and blood pressure management. BP=135/91 mmHg, Chol=166."
+220,109,2025-03-07,"Weight and blood pressure management. BP=143/87 mmHg, Chol=203."
+221,109,2025-01-20,"Weight and blood pressure management. BP=135/97 mmHg, Chol=190."
+222,110,2024-09-30,"Weight and blood pressure management. BP=137/97 mmHg, Chol=228."
+223,110,2025-08-18,"Weight and blood pressure management. BP=131/90 mmHg, Chol=237."
+224,110,2024-06-06,"Weight and blood pressure management. BP=144/94 mmHg, Chol=243."
+225,111,2025-02-15,Asthma/respiratory symptom review. FEV1=83% predicted.
+226,111,2024-10-24,Asthma/respiratory symptom review. FEV1=68% predicted.
+227,111,2025-02-13,Asthma/respiratory symptom review. FEV1=71% predicted.
+228,112,2024-10-31,Asthma/respiratory symptom review. FEV1=61% predicted.
+229,112,2025-06-23,Asthma/respiratory symptom review. FEV1=58% predicted.
+230,113,2024-04-26,Asthma/respiratory symptom review. FEV1=47% predicted.
+231,113,2024-11-18,Asthma/respiratory symptom review. FEV1=65% predicted.
+232,114,2024-12-14,Asthma/respiratory symptom review. FEV1=48% predicted.
+233,114,2025-07-06,Asthma/respiratory symptom review. FEV1=69% predicted.
+234,114,2024-11-12,Asthma/respiratory symptom review. FEV1=66% predicted.
+235,115,2024-07-31,"Routine health check. Chol=190 mg/dL, HbA1c=5.1%."
+236,116,2024-04-27,"Diabetes follow-up. HbA1c=7.3%, FPG=153 mg/dL."
+237,117,2024-07-22,"Routine health check. Chol=189 mg/dL, HbA1c=5.2%."
+238,117,2025-07-16,"Routine health check. Chol=205 mg/dL, HbA1c=5.3%."
+239,117,2024-08-14,"Routine health check. Chol=169 mg/dL, HbA1c=4.8%."
+240,118,2024-06-01,"Cardiovascular review. Chol=225, LDL=153 mg/dL."
+241,118,2025-08-08,"Cardiovascular review. Chol=292, LDL=175 mg/dL."
+242,119,2024-10-16,Geriatric follow-up. BP=140/92 mmHg.
+243,119,2024-09-08,Geriatric follow-up. BP=128/103 mmHg.
+244,120,2024-07-16,"Weight and blood pressure management. BP=137/96 mmHg, Chol=226."
+245,120,2025-03-25,"Weight and blood pressure management. BP=140/101 mmHg, Chol=237."
+246,120,2025-04-01,"Weight and blood pressure management. BP=134/91 mmHg, Chol=218."
+247,121,2025-03-24,"Diabetes follow-up. HbA1c=7.6%, FPG=138 mg/dL."
+248,121,2024-10-06,"Diabetes follow-up. HbA1c=6.3%, FPG=113 mg/dL."
+249,122,2024-11-01,Asthma/respiratory symptom review. FEV1=64% predicted.
+250,122,2025-07-27,Asthma/respiratory symptom review. FEV1=74% predicted.
+251,122,2024-12-05,Asthma/respiratory symptom review. FEV1=73% predicted.
+252,123,2024-12-16,"Routine health check. Chol=185 mg/dL, HbA1c=5.1%."
+253,123,2024-09-02,"Routine health check. Chol=174 mg/dL, HbA1c=5.3%."
+254,124,2025-04-29,"Weight and blood pressure management. BP=131/89 mmHg, Chol=233."
+255,125,2024-07-29,"Weight and blood pressure management. BP=139/95 mmHg, Chol=179."
+256,125,2024-08-22,"Weight and blood pressure management. BP=139/93 mmHg, Chol=212."
+257,125,2024-08-03,"Weight and blood pressure management. BP=139/82 mmHg, Chol=229."
+258,126,2025-08-10,"Cardiovascular review. Chol=167, LDL=163 mg/dL."
+259,127,2025-02-23,"Routine health check. Chol=197 mg/dL, HbA1c=5.4%."
+260,127,2024-09-22,"Routine health check. Chol=186 mg/dL, HbA1c=4.8%."
+261,127,2025-06-02,"Routine health check. Chol=159 mg/dL, HbA1c=5.2%."
+262,128,2024-08-22,Asthma/respiratory symptom review. FEV1=58% predicted.
+263,129,2024-04-22,Asthma/respiratory symptom review. FEV1=77% predicted.
+264,130,2025-04-21,"Diabetes follow-up. HbA1c=8.4%, FPG=132 mg/dL."
+265,130,2025-02-12,"Diabetes follow-up. HbA1c=7.9%, FPG=164 mg/dL."
+266,131,2024-06-22,"Cardiovascular review. Chol=241, LDL=159 mg/dL."
+267,131,2025-06-13,"Cardiovascular review. Chol=225, LDL=166 mg/dL."
+268,132,2025-08-26,"Cardiovascular review. Chol=257, LDL=167 mg/dL."
+269,133,2024-05-16,"Diabetes follow-up. HbA1c=6.6%, FPG=185 mg/dL."
+270,134,2025-06-23,"Weight and blood pressure management. BP=135/79 mmHg, Chol=213."
+271,134,2024-10-07,"Weight and blood pressure management. BP=131/92 mmHg, Chol=196."
+272,135,2025-08-03,Asthma/respiratory symptom review. FEV1=82% predicted.
+273,135,2024-07-14,Asthma/respiratory symptom review. FEV1=69% predicted.
+274,136,2024-05-04,"Weight and blood pressure management. BP=137/91 mmHg, Chol=221."
+275,136,2024-04-14,"Weight and blood pressure management. BP=131/87 mmHg, Chol=175."
+276,136,2024-04-23,"Weight and blood pressure management. BP=133/93 mmHg, Chol=228."
+277,137,2024-06-25,"Cardiovascular review. Chol=303, LDL=173 mg/dL."
+278,138,2025-09-01,"Cardiovascular review. Chol=293, LDL=176 mg/dL."
+279,138,2024-05-04,"Cardiovascular review. Chol=230, LDL=168 mg/dL."
+280,138,2024-06-23,"Cardiovascular review. Chol=283, LDL=142 mg/dL."
+281,139,2025-05-17,Asthma/respiratory symptom review. FEV1=59% predicted.
+282,139,2025-04-27,Asthma/respiratory symptom review. FEV1=63% predicted.
+283,140,2025-04-04,Geriatric follow-up. BP=143/92 mmHg.
+284,141,2024-09-10,"Cardiovascular review. Chol=286, LDL=180 mg/dL."
+285,141,2024-05-16,"Cardiovascular review. Chol=258, LDL=160 mg/dL."
+286,142,2025-04-05,"Cardiovascular review. Chol=196, LDL=201 mg/dL."
+287,142,2025-01-02,"Cardiovascular review. Chol=258, LDL=144 mg/dL."
+288,142,2025-03-28,"Cardiovascular review. Chol=232, LDL=168 mg/dL."
+289,143,2024-09-25,"Weight and blood pressure management. BP=146/86 mmHg, Chol=171."
+290,143,2024-09-24,"Weight and blood pressure management. BP=144/91 mmHg, Chol=202."
+291,143,2024-11-28,"Weight and blood pressure management. BP=145/97 mmHg, Chol=165."
+292,144,2024-05-04,Asthma/respiratory symptom review. FEV1=69% predicted.
+293,145,2024-05-20,"Diabetes follow-up. HbA1c=9.0%, FPG=133 mg/dL."
+294,145,2024-10-17,"Diabetes follow-up. HbA1c=9.2%, FPG=174 mg/dL."
+295,146,2025-06-20,"Routine health check. Chol=180 mg/dL, HbA1c=5.3%."
+296,146,2024-09-18,"Routine health check. Chol=184 mg/dL, HbA1c=5.4%."
+297,147,2025-04-01,"Routine health check. Chol=155 mg/dL, HbA1c=5.3%."
+298,148,2025-08-18,"Weight and blood pressure management. BP=150/90 mmHg, Chol=259."
+299,148,2024-06-10,"Weight and blood pressure management. BP=147/99 mmHg, Chol=240."
+300,148,2024-06-30,"Weight and blood pressure management. BP=148/88 mmHg, Chol=215."
+301,149,2024-11-05,"Routine health check. Chol=161 mg/dL, HbA1c=5.1%."
+302,149,2025-03-09,"Routine health check. Chol=173 mg/dL, HbA1c=5.1%."
+303,150,2024-10-25,"Cardiovascular review. Chol=265, LDL=176 mg/dL."
+304,150,2025-03-29,"Cardiovascular review. Chol=331, LDL=163 mg/dL."
+305,151,2024-10-09,Geriatric follow-up. BP=147/88 mmHg.
+306,151,2025-04-13,Geriatric follow-up. BP=148/82 mmHg.
+307,152,2024-12-02,Geriatric follow-up. BP=145/94 mmHg.
+308,152,2025-01-01,Geriatric follow-up. BP=141/90 mmHg.
+309,152,2024-09-23,Geriatric follow-up. BP=141/98 mmHg.
+310,153,2025-01-04,"Cardiovascular review. Chol=258, LDL=159 mg/dL."
+311,154,2024-04-14,Geriatric follow-up. BP=134/95 mmHg.
+312,154,2024-10-12,Geriatric follow-up. BP=138/97 mmHg.
+313,154,2025-01-13,Geriatric follow-up. BP=167/87 mmHg.
+314,155,2024-09-20,"Diabetes follow-up. HbA1c=6.5%, FPG=121 mg/dL."
+315,156,2024-08-13,Geriatric follow-up. BP=150/96 mmHg.
+316,156,2024-05-04,Geriatric follow-up. BP=141/96 mmHg.
+317,157,2025-01-17,"Weight and blood pressure management. BP=135/88 mmHg, Chol=223."
+318,157,2024-11-25,"Weight and blood pressure management. BP=136/100 mmHg, Chol=250."
+319,158,2025-03-02,Geriatric follow-up. BP=131/83 mmHg.
+320,159,2025-05-06,"Cardiovascular review. Chol=232, LDL=145 mg/dL."
+321,159,2024-04-19,"Cardiovascular review. Chol=278, LDL=135 mg/dL."
+322,159,2025-01-07,"Cardiovascular review. Chol=270, LDL=138 mg/dL."
+323,160,2025-05-31,"Diabetes follow-up. HbA1c=6.7%, FPG=115 mg/dL."
+324,160,2025-02-09,"Diabetes follow-up. HbA1c=7.7%, FPG=175 mg/dL."
+325,161,2025-01-19,"Weight and blood pressure management. BP=138/101 mmHg, Chol=243."
+326,161,2025-04-21,"Weight and blood pressure management. BP=141/82 mmHg, Chol=229."
+327,162,2024-06-22,"Routine health check. Chol=169 mg/dL, HbA1c=5.3%."
+328,162,2025-06-09,"Routine health check. Chol=150 mg/dL, HbA1c=5.2%."
+329,163,2025-02-07,"Weight and blood pressure management. BP=143/89 mmHg, Chol=225."
+330,164,2024-08-09,Asthma/respiratory symptom review. FEV1=75% predicted.
+331,165,2024-07-06,Geriatric follow-up. BP=149/90 mmHg.
+332,165,2024-08-31,Geriatric follow-up. BP=138/87 mmHg.
+333,166,2024-10-29,"Weight and blood pressure management. BP=124/89 mmHg, Chol=258."
+334,166,2025-03-21,"Weight and blood pressure management. BP=142/85 mmHg, Chol=245."
+335,166,2025-02-17,"Weight and blood pressure management. BP=150/93 mmHg, Chol=271."
+336,167,2024-10-04,Asthma/respiratory symptom review. FEV1=75% predicted.
+337,167,2024-04-20,Asthma/respiratory symptom review. FEV1=75% predicted.
+338,167,2024-04-29,Asthma/respiratory symptom review. FEV1=77% predicted.
+339,168,2024-04-16,"Diabetes follow-up. HbA1c=8.4%, FPG=164 mg/dL."
+340,169,2025-08-05,"Routine health check. Chol=182 mg/dL, HbA1c=5.1%."
+341,169,2025-04-26,"Routine health check. Chol=165 mg/dL, HbA1c=5.3%."
+342,169,2024-06-14,"Routine health check. Chol=189 mg/dL, HbA1c=5.3%."
+343,170,2025-04-19,"Weight and blood pressure management. BP=142/96 mmHg, Chol=215."
+344,170,2024-11-06,"Weight and blood pressure management. BP=131/100 mmHg, Chol=245."
+345,170,2025-08-30,"Weight and blood pressure management. BP=138/94 mmHg, Chol=251."
+346,171,2025-03-07,Geriatric follow-up. BP=138/88 mmHg.
+347,172,2024-08-27,"Diabetes follow-up. HbA1c=9.0%, FPG=168 mg/dL."
+348,172,2024-07-08,"Diabetes follow-up. HbA1c=7.9%, FPG=158 mg/dL."
+349,172,2024-12-15,"Diabetes follow-up. HbA1c=8.4%, FPG=179 mg/dL."
+350,173,2025-07-26,Geriatric follow-up. BP=155/91 mmHg.
+351,174,2025-03-31,"Cardiovascular review. Chol=261, LDL=126 mg/dL."
+352,174,2025-04-10,"Cardiovascular review. Chol=257, LDL=139 mg/dL."
+353,174,2025-01-20,"Cardiovascular review. Chol=226, LDL=183 mg/dL."
+354,175,2025-02-02,Geriatric follow-up. BP=147/91 mmHg.
+355,176,2025-06-28,Asthma/respiratory symptom review. FEV1=69% predicted.
+356,176,2024-09-23,Asthma/respiratory symptom review. FEV1=65% predicted.
+357,177,2025-06-25,Geriatric follow-up. BP=144/96 mmHg.
+358,177,2025-03-16,Geriatric follow-up. BP=151/76 mmHg.
+359,178,2024-06-01,"Weight and blood pressure management. BP=135/97 mmHg, Chol=261."
+360,178,2025-01-03,"Weight and blood pressure management. BP=153/89 mmHg, Chol=215."
+361,178,2025-06-17,"Weight and blood pressure management. BP=137/88 mmHg, Chol=174."
+362,179,2025-08-12,"Diabetes follow-up. HbA1c=5.6%, FPG=119 mg/dL."
+363,179,2024-12-26,"Diabetes follow-up. HbA1c=6.4%, FPG=113 mg/dL."
+364,180,2024-11-05,"Cardiovascular review. Chol=219, LDL=152 mg/dL."
+365,180,2024-07-01,"Cardiovascular review. Chol=245, LDL=175 mg/dL."
+366,181,2025-06-13,"Cardiovascular review. Chol=226, LDL=135 mg/dL."
+367,182,2025-06-18,Geriatric follow-up. BP=159/95 mmHg.
+368,182,2025-04-22,Geriatric follow-up. BP=170/86 mmHg.
+369,182,2024-12-11,Geriatric follow-up. BP=135/89 mmHg.
+370,183,2024-11-03,Asthma/respiratory symptom review. FEV1=55% predicted.
+371,183,2025-07-28,Asthma/respiratory symptom review. FEV1=69% predicted.
+372,183,2025-05-07,Asthma/respiratory symptom review. FEV1=54% predicted.
+373,184,2025-01-29,"Weight and blood pressure management. BP=142/91 mmHg, Chol=174."
+374,184,2025-08-10,"Weight and blood pressure management. BP=127/98 mmHg, Chol=202."
+375,184,2025-01-25,"Weight and blood pressure management. BP=133/92 mmHg, Chol=204."
+376,185,2025-02-21,"Weight and blood pressure management. BP=131/93 mmHg, Chol=194."
+377,186,2025-03-09,Geriatric follow-up. BP=124/82 mmHg.
+378,186,2025-02-10,Geriatric follow-up. BP=132/87 mmHg.
+379,186,2024-06-21,Geriatric follow-up. BP=141/102 mmHg.
+380,187,2025-07-31,"Routine health check. Chol=185 mg/dL, HbA1c=5.1%."
+381,188,2025-05-06,"Cardiovascular review. Chol=307, LDL=144 mg/dL."
+382,188,2024-09-21,"Cardiovascular review. Chol=246, LDL=163 mg/dL."
+383,188,2025-05-02,"Cardiovascular review. Chol=265, LDL=175 mg/dL."
+384,189,2024-11-11,"Diabetes follow-up. HbA1c=5.8%, FPG=107 mg/dL."
+385,189,2025-06-04,"Diabetes follow-up. HbA1c=8.5%, FPG=167 mg/dL."
+386,190,2025-07-29,"Routine health check. Chol=140 mg/dL, HbA1c=4.9%."
+387,190,2024-07-25,"Routine health check. Chol=213 mg/dL, HbA1c=5.4%."
+388,191,2024-05-05,Geriatric follow-up. BP=159/87 mmHg.
+389,192,2025-02-23,"Diabetes follow-up. HbA1c=6.8%, FPG=190 mg/dL."
+390,192,2024-04-15,"Diabetes follow-up. HbA1c=7.7%, FPG=154 mg/dL."
+391,193,2024-09-14,"Cardiovascular review. Chol=238, LDL=235 mg/dL."
+392,193,2024-09-21,"Cardiovascular review. Chol=279, LDL=136 mg/dL."
+393,194,2024-06-21,Asthma/respiratory symptom review. FEV1=65% predicted.
+394,194,2025-02-08,Asthma/respiratory symptom review. FEV1=56% predicted.
+395,195,2024-12-11,"Cardiovascular review. Chol=282, LDL=161 mg/dL."
+396,195,2025-03-24,"Cardiovascular review. Chol=273, LDL=152 mg/dL."
+397,195,2025-04-01,"Cardiovascular review. Chol=241, LDL=182 mg/dL."
+398,196,2025-03-06,Asthma/respiratory symptom review. FEV1=57% predicted.
+399,197,2024-10-23,Geriatric follow-up. BP=162/87 mmHg.
+400,197,2024-06-24,Geriatric follow-up. BP=154/86 mmHg.
+401,197,2025-07-23,Geriatric follow-up. BP=151/97 mmHg.
+402,198,2025-06-08,"Diabetes follow-up. HbA1c=8.8%, FPG=187 mg/dL."
+403,199,2025-03-03,"Weight and blood pressure management. BP=137/90 mmHg, Chol=216."
+404,199,2025-03-19,"Weight and blood pressure management. BP=152/96 mmHg, Chol=244."
+405,199,2025-01-05,"Weight and blood pressure management. BP=140/84 mmHg, Chol=168."
+406,200,2025-03-30,Asthma/respiratory symptom review. FEV1=80% predicted.

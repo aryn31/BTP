@@ -16,7 +16,7 @@ np.random.seed(SEED)
 fake = Faker()
 Faker.seed(SEED)
 
-N_PATIENTS = 100
+N_PATIENTS = 200
 WEARABLE_DAYS = 14            # days of wearable data per patient
 ENCOUNTERS_RANGE = (1, 3)     # min/max encounters per patient
 START_DATE = datetime.now().date() - timedelta(days=WEARABLE_DAYS)
@@ -446,7 +446,7 @@ if __name__ == "__main__":
         print(v.head())
 
     # Write CSVs
-    export_csv(data, "./exports")
+    export_csv(data, "./exporttts")
 
     # Optional: write to MySQL (uncomment & set your URI)
     export_mysql(data, "mysql+pymysql://root:sql_my1country@localhost:3306/BTP", if_exists="append")

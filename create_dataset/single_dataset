@@ -1,0 +1,112 @@
+# synth_health_data_single.py
+import random
+from datetime import datetime, timedelta, date
+from typing import Dict, List
+
+import numpy as np
+import pandas as pd
+from faker import Faker
+
+# ----------------------------
+# Config & Globals
+# ----------------------------
+SEED = 42
+random.seed(SEED)
+np.random.seed(SEED)
+fake = Faker()
+Faker.seed(SEED)
+
+N_PATIENTS = 3000
+WEARABLE_DAYS = 14
+START_DATE = datetime.now().date() - timedelta(days=WEARABLE_DAYS)
+
+# Profiles (same distributions)
+HEALTH_PROFILES = {
+    "Healthy": {"wearable": {"hr_mean": 72, "hr_sd": 6, "spo2_mean": 98.5, "spo2_sd": 0.6,
+                             "bp_sys_mean": 119, "bp_sys_sd": 6, "bp_dia_mean": 78, "bp_dia_sd": 4,
+                             "stress_probs": (0.7, 0.25, 0.05)}},
+    "Diabetic": {"wearable": {"hr_mean": 84, "hr_sd": 7, "spo2_mean": 97.0, "spo2_sd": 0.7,
+                              "bp_sys_mean": 136, "bp_sys_sd": 10, "bp_dia_mean": 88, "bp_dia_sd": 7,
+                              "stress_probs": (0.2, 0.6, 0.2)}},
+    "Cardiac": {"wearable": {"hr_mean": 90, "hr_sd": 10, "spo2_mean": 94.5, "spo2_sd": 1.5,
+                             "bp_sys_mean": 148, "bp_sys_sd": 12, "bp_dia_mean": 96, "bp_dia_sd": 8,
+                             "stress_probs": (0.15, 0.5, 0.35)}},
+    "Obese": {"wearable": {"hr_mean": 86, "hr_sd": 8, "spo2_mean": 96.5, "spo2_sd": 0.9,
+                           "bp_sys_mean": 140, "bp_sys_sd": 10, "bp_dia_mean": 92, "bp_dia_sd": 6,
+                           "stress_probs": (0.25, 0.5, 0.25)}},
+    "Respiratory": {"wearable": {"hr_mean": 82, "hr_sd": 8, "spo2_mean": 93.5, "spo2_sd": 2.0,
+                                 "bp_sys_mean": 132, "bp_sys_sd": 8, "bp_dia_mean": 86, "bp_dia_sd": 6,
+                                 "stress_probs": (0.25, 0.55, 0.20)}},
+    "Elderly": {"wearable": {"hr_mean": 80, "hr_sd": 8, "spo2_mean": 95.0, "spo2_sd": 1.2,
+                             "bp_sys_mean": 142, "bp_sys_sd": 10, "bp_dia_mean": 90, "bp_dia_sd": 6,
+                             "stress_probs": (0.25, 0.55, 0.20)}}
+}
+PROFILE_CHOICES = list(HEALTH_PROFILES.keys())
+
+# ----------------------------
+# Helpers
+# ----------------------------
+def clamp(x, lo, hi): return max(lo, min(hi, x))
+def rnd_norm_int(mean, sd, lo=None, hi=None):
+    val = int(round(np.random.normal(mean, sd)))
+    return clamp(val, lo, hi) if lo is not None and hi is not None else val
+def rnd_norm_float(mean, sd, lo=None, hi=None, nd=1):
+    val = round(float(np.random.normal(mean, sd)), nd)
+    return clamp(val, lo, hi) if lo is not None and hi is not None else val
+def pick_stress(p_low, p_med, p_high): return np.random.choice([1, 2, 3], p=[p_low, p_med, p_high])
+
+# ----------------------------
+# Patient generator
+# ----------------------------
+def generate_patient(pid: int) -> Dict:
+    profile = random.choice(PROFILE_CHOICES)
+    gender = random.choice(["Male", "Female"])
+    dob = fake.date_of_birth(minimum_age=20, maximum_age=90)
+    age = int((datetime.now().date() - dob).days / 365.25)
+    height = rnd_norm_int(170, 9, 150, 195)
+    weight = rnd_norm_int(72, 14, 45, 140)
+    bmi = round(weight / ((height / 100) ** 2), 1)
+
+    wcfg = HEALTH_PROFILES[profile]["wearable"]
+    hr = rnd_norm_int(wcfg["hr_mean"], wcfg["hr_sd"], 45, 140)
+    spo2 = rnd_norm_float(wcfg["spo2_mean"], wcfg["spo2_sd"], 85, 100, nd=1)
+    sys = rnd_norm_int(wcfg["bp_sys_mean"], wcfg["bp_sys_sd"], 90, 220)
+    dia = rnd_norm_int(wcfg["bp_dia_mean"], wcfg["bp_dia_sd"], 50, 140)
+    stress = pick_stress(*wcfg["stress_probs"])
+
+    return {
+        "PatientID": pid,
+        "DOB": dob,
+        "Age": age,
+        "Gender": gender,
+        "HeartRate_bpm": hr,
+        "SpO2": spo2,
+        "StressLevel": stress,
+        "BP_Sys": sys,
+        "BP_Dia": dia,
+        "BMI": bmi
+    }
+
+# ----------------------------
+# Dataset generator
+# ----------------------------
+def generate_dataset(n_patients=N_PATIENTS) -> pd.DataFrame:
+    patients = [generate_patient(pid) for pid in range(1, n_patients + 1)]
+    df = pd.DataFrame(patients)
+    df["DOB"] = pd.to_datetime(df["DOB"])
+    return df
+
+# ----------------------------
+# Export
+# ----------------------------
+def export_csv(df: pd.DataFrame, out_path: str = "./patient_summary.csv"):
+    df.to_csv(out_path, index=False)
+    print(f"✅ File written: {out_path} ({len(df)} records)")
+
+# ----------------------------
+# Run
+# ----------------------------
+if __name__ == "__main__":
+    df = generate_dataset(N_PATIENTS)
+    print(df.head())
+    export_csv(df)

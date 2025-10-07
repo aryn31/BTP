@@ -1,0 +1,278 @@
+PatientID,Condition,YearDiagnosed,Status
+1,Hypertension,2013,Ongoing
+1,Arthritis,2009,Ongoing
+2,Hypertension,2013,Ongoing
+2,Arthritis,2015,Ongoing
+3,Heart Disease,2012,Recovered
+3,Hypertension,2017,Ongoing
+4,Heart Disease,2007,Ongoing
+4,Hypertension,2023,Recovered
+6,Hypertension,2010,Ongoing
+6,Arthritis,2008,Recovered
+7,Asthma,2020,Recovered
+8,Diabetes,2005,Ongoing
+9,Asthma,2020,Recovered
+10,Diabetes,2018,Ongoing
+11,Obesity,2019,Ongoing
+11,Hypertension,2022,Ongoing
+12,Diabetes,2007,Ongoing
+14,Heart Disease,2009,Ongoing
+14,Hypertension,2008,Ongoing
+15,Diabetes,2019,Ongoing
+16,Obesity,2012,Recovered
+16,Hypertension,2010,Recovered
+18,Hypertension,2024,Recovered
+18,Arthritis,2008,Ongoing
+19,Diabetes,2017,Ongoing
+20,Hypertension,2012,Ongoing
+20,Arthritis,2012,Recovered
+21,Obesity,2021,Ongoing
+21,Hypertension,2022,Ongoing
+22,Asthma,2012,Ongoing
+23,Asthma,2006,Ongoing
+24,Obesity,2017,Ongoing
+24,Hypertension,2019,Recovered
+25,Obesity,2007,Ongoing
+25,Hypertension,2022,Ongoing
+26,Asthma,2010,Recovered
+27,Hypertension,2018,Recovered
+27,Arthritis,2008,Ongoing
+28,Asthma,2005,Ongoing
+29,Diabetes,2020,Ongoing
+30,Diabetes,2020,Ongoing
+31,Obesity,2006,Ongoing
+31,Hypertension,2020,Ongoing
+32,Obesity,2024,Ongoing
+32,Hypertension,2008,Recovered
+33,Heart Disease,2012,Recovered
+33,Hypertension,2023,Ongoing
+34,Asthma,2007,Ongoing
+35,Asthma,2020,Recovered
+36,Heart Disease,2017,Recovered
+36,Hypertension,2005,Ongoing
+37,Diabetes,2005,Ongoing
+38,Diabetes,2018,Ongoing
+39,Diabetes,2015,Ongoing
+40,Hypertension,2007,Recovered
+40,Arthritis,2022,Ongoing
+42,Obesity,2005,Recovered
+42,Hypertension,2019,Recovered
+43,Heart Disease,2017,Ongoing
+43,Hypertension,2023,Recovered
+44,Diabetes,2022,Recovered
+46,Heart Disease,2008,Ongoing
+46,Hypertension,2022,Ongoing
+47,Hypertension,2016,Ongoing
+47,Arthritis,2013,Ongoing
+48,Heart Disease,2022,Ongoing
+48,Hypertension,2010,Ongoing
+49,Asthma,2006,Ongoing
+50,Heart Disease,2024,Ongoing
+50,Hypertension,2019,Ongoing
+51,Hypertension,2007,Recovered
+51,Arthritis,2007,Ongoing
+52,Diabetes,2022,Ongoing
+53,Obesity,2010,Ongoing
+53,Hypertension,2015,Recovered
+54,Asthma,2012,Ongoing
+55,Asthma,2022,Recovered
+56,Heart Disease,2024,Ongoing
+56,Hypertension,2016,Ongoing
+57,Hypertension,2008,Ongoing
+57,Arthritis,2011,Ongoing
+58,Obesity,2006,Ongoing
+58,Hypertension,2014,Ongoing
+60,Hypertension,2007,Ongoing
+60,Arthritis,2009,Recovered
+61,Obesity,2009,Ongoing
+61,Hypertension,2014,Recovered
+62,Heart Disease,2022,Ongoing
+62,Hypertension,2020,Recovered
+65,Heart Disease,2012,Ongoing
+65,Hypertension,2024,Ongoing
+66,Asthma,2020,Ongoing
+67,Hypertension,2020,Ongoing
+67,Arthritis,2009,Ongoing
+68,Heart Disease,2016,Ongoing
+68,Hypertension,2017,Ongoing
+69,Obesity,2019,Ongoing
+69,Hypertension,2006,Ongoing
+70,Heart Disease,2023,Ongoing
+70,Hypertension,2009,Ongoing
+71,Heart Disease,2024,Ongoing
+71,Hypertension,2020,Ongoing
+73,Asthma,2009,Ongoing
+74,Asthma,2014,Ongoing
+75,Asthma,2014,Ongoing
+76,Heart Disease,2016,Ongoing
+76,Hypertension,2008,Ongoing
+77,Obesity,2005,Ongoing
+77,Hypertension,2017,Ongoing
+78,Diabetes,2014,Ongoing
+79,Asthma,2024,Ongoing
+81,Asthma,2006,Ongoing
+82,Asthma,2014,Recovered
+84,Diabetes,2010,Ongoing
+86,Heart Disease,2024,Recovered
+86,Hypertension,2017,Recovered
+87,Hypertension,2016,Ongoing
+87,Arthritis,2006,Ongoing
+88,Asthma,2022,Recovered
+89,Obesity,2011,Ongoing
+89,Hypertension,2020,Ongoing
+91,Asthma,2016,Ongoing
+92,Diabetes,2018,Ongoing
+93,Hypertension,2024,Recovered
+93,Arthritis,2015,Ongoing
+94,Diabetes,2012,Ongoing
+95,Asthma,2007,Ongoing
+96,Obesity,2016,Ongoing
+96,Hypertension,2016,Ongoing
+97,Diabetes,2012,Ongoing
+99,Heart Disease,2021,Recovered
+99,Hypertension,2018,Recovered
+100,Heart Disease,2006,Ongoing
+100,Hypertension,2017,Ongoing
+101,Asthma,2015,Ongoing
+102,Obesity,2007,Ongoing
+102,Hypertension,2024,Recovered
+103,Heart Disease,2009,Ongoing
+103,Hypertension,2015,Ongoing
+104,Asthma,2024,Recovered
+106,Asthma,2015,Ongoing
+107,Obesity,2023,Ongoing
+107,Hypertension,2022,Ongoing
+108,Obesity,2006,Recovered
+108,Hypertension,2016,Ongoing
+109,Obesity,2023,Ongoing
+109,Hypertension,2009,Ongoing
+110,Obesity,2014,Ongoing
+110,Hypertension,2008,Ongoing
+111,Asthma,2005,Ongoing
+112,Asthma,2016,Recovered
+113,Asthma,2010,Ongoing
+114,Asthma,2020,Ongoing
+116,Diabetes,2024,Ongoing
+118,Heart Disease,2015,Ongoing
+118,Hypertension,2007,Ongoing
+119,Hypertension,2008,Recovered
+119,Arthritis,2010,Ongoing
+120,Obesity,2008,Ongoing
+120,Hypertension,2020,Ongoing
+121,Diabetes,2021,Ongoing
+122,Asthma,2005,Recovered
+124,Obesity,2017,Ongoing
+124,Hypertension,2022,Ongoing
+125,Obesity,2024,Ongoing
+125,Hypertension,2014,Ongoing
+126,Heart Disease,2021,Ongoing
+126,Hypertension,2023,Ongoing
+128,Asthma,2007,Recovered
+129,Asthma,2005,Recovered
+130,Diabetes,2006,Recovered
+131,Heart Disease,2012,Ongoing
+131,Hypertension,2011,Ongoing
+132,Heart Disease,2015,Ongoing
+132,Hypertension,2012,Recovered
+133,Diabetes,2017,Ongoing
+134,Obesity,2017,Ongoing
+134,Hypertension,2010,Ongoing
+135,Asthma,2022,Recovered
+136,Obesity,2023,Recovered
+136,Hypertension,2010,Ongoing
+137,Heart Disease,2006,Ongoing
+137,Hypertension,2012,Ongoing
+138,Heart Disease,2017,Ongoing
+138,Hypertension,2015,Ongoing
+139,Asthma,2024,Ongoing
+140,Hypertension,2013,Recovered
+140,Arthritis,2005,Ongoing
+141,Heart Disease,2015,Ongoing
+141,Hypertension,2017,Ongoing
+142,Heart Disease,2012,Ongoing
+142,Hypertension,2017,Ongoing
+143,Obesity,2013,Ongoing
+143,Hypertension,2022,Ongoing
+144,Asthma,2006,Recovered
+145,Diabetes,2011,Ongoing
+148,Obesity,2018,Ongoing
+148,Hypertension,2007,Ongoing
+150,Heart Disease,2005,Ongoing
+150,Hypertension,2010,Recovered
+151,Hypertension,2017,Recovered
+151,Arthritis,2019,Ongoing
+152,Hypertension,2009,Ongoing
+152,Arthritis,2012,Recovered
+153,Heart Disease,2022,Ongoing
+153,Hypertension,2008,Ongoing
+154,Hypertension,2011,Ongoing
+154,Arthritis,2017,Ongoing
+155,Diabetes,2007,Ongoing
+156,Hypertension,2016,Ongoing
+156,Arthritis,2008,Ongoing
+157,Obesity,2012,Ongoing
+157,Hypertension,2009,Ongoing
+158,Hypertension,2005,Ongoing
+158,Arthritis,2008,Ongoing
+159,Heart Disease,2022,Ongoing
+159,Hypertension,2011,Ongoing
+160,Diabetes,2014,Ongoing
+161,Obesity,2018,Ongoing
+161,Hypertension,2010,Ongoing
+163,Obesity,2015,Recovered
+163,Hypertension,2006,Ongoing
+164,Asthma,2007,Recovered
+165,Hypertension,2015,Ongoing
+165,Arthritis,2014,Ongoing
+166,Obesity,2023,Ongoing
+166,Hypertension,2019,Ongoing
+167,Asthma,2017,Recovered
+168,Diabetes,2008,Recovered
+170,Obesity,2016,Recovered
+170,Hypertension,2022,Ongoing
+171,Hypertension,2009,Recovered
+171,Arthritis,2024,Ongoing
+172,Diabetes,2016,Ongoing
+173,Hypertension,2021,Ongoing
+173,Arthritis,2008,Ongoing
+174,Heart Disease,2012,Recovered
+174,Hypertension,2018,Ongoing
+175,Hypertension,2010,Ongoing
+175,Arthritis,2009,Ongoing
+176,Asthma,2010,Ongoing
+177,Hypertension,2014,Ongoing
+177,Arthritis,2011,Ongoing
+178,Obesity,2014,Ongoing
+178,Hypertension,2008,Ongoing
+179,Diabetes,2019,Ongoing
+180,Heart Disease,2006,Ongoing
+180,Hypertension,2021,Recovered
+181,Heart Disease,2012,Ongoing
+181,Hypertension,2016,Recovered
+182,Hypertension,2012,Ongoing
+182,Arthritis,2015,Ongoing
+183,Asthma,2014,Recovered
+184,Obesity,2008,Ongoing
+184,Hypertension,2021,Recovered
+185,Obesity,2023,Recovered
+185,Hypertension,2023,Ongoing
+186,Hypertension,2016,Ongoing
+186,Arthritis,2018,Ongoing
+188,Heart Disease,2006,Ongoing
+188,Hypertension,2017,Ongoing
+189,Diabetes,2017,Ongoing
+191,Hypertension,2015,Ongoing
+191,Arthritis,2016,Ongoing
+192,Diabetes,2011,Ongoing
+193,Heart Disease,2021,Ongoing
+193,Hypertension,2012,Recovered
+194,Asthma,2016,Ongoing
+195,Heart Disease,2023,Ongoing
+195,Hypertension,2023,Ongoing
+196,Asthma,2008,Ongoing
+197,Hypertension,2023,Ongoing
+197,Arthritis,2022,Ongoing
+198,Diabetes,2014,Ongoing
+199,Obesity,2017,Ongoing
+199,Hypertension,2007,Ongoing
+200,Asthma,2019,Ongoing
