@@ -87,12 +87,6 @@ def escalate_to_doctor(alert_id: int, patient_id: int, doctor_id: int):
 # === Schedule escalation ===
 def schedule_escalation(alert_id: int, patient_id: int, doctor_id: int, 
                         timeout_patient: int = 3, timeout_family: int = 3):
-    """
-    Schedule three-stage escalation:
-    1️⃣ Wait `timeout_patient` minutes for patient response.
-    2️⃣ If no response, escalate to family member and wait `timeout_family` minutes.
-    3️⃣ If still no response, escalate to doctor.
-    """
     scheduler.add_job(
         escalate_to_family,
         'date',

@@ -7,16 +7,15 @@ from datetime import datetime, timedelta
 import os
 import math
 
-# === DB Connection (Using Environment Variable) ===
 DB_URI = os.getenv("DATABASE_URI", "mysql+pymysql://root:sql_my1country@localhost:3306/BTP")
 engine = create_engine(DB_URI)
 
-# === Utilities ===
+
 def _clean_patient_ids(patient_ids_str: str) -> List[int]:
     """Extract a list of numeric patient IDs from a comma-separated string."""
     if not isinstance(patient_ids_str, str):
         return []
-    # Use regex to find all numbers in the string
+
     ids = re.findall(r'\d+', patient_ids_str)
     return [int(id) for id in ids]
 
@@ -54,7 +53,7 @@ def logistic_risk(x: float, midpoint: float, steepness: float = 0.1, invert: boo
     - invert: if True, lower values mean higher risk (e.g., SpO2)
     """
     if pd.isna(x):
-        return 0.0  # Missing data → no risk contribution
+        return 0.0  #missing data (no risk contribution)
 
     val = 1 / (1 + math.exp(-steepness * (x - midpoint)))
     return 1 - val if invert else val
@@ -65,7 +64,7 @@ def calculate_risk_scores(patient_row: pd.Series, wearable_row: pd.Series):
     risks: Dict[str, float] = {}
     explanations: List[str] = []
 
-    # --- Hypertension (BP > 140/90 risky) ---
+    #hypertension (BP>140/90 risky)
     sys_, dia_ = wearable_row.get("SystolicBP"), wearable_row.get("DiastolicBP")
     if pd.notna(sys_) and pd.notna(dia_):
         risk_sys = logistic_risk(sys_, midpoint=140, steepness=0.05)
@@ -76,16 +75,16 @@ def calculate_risk_scores(patient_row: pd.Series, wearable_row: pd.Series):
         risks["hypertension"] = 0.0
         explanations.append("Blood pressure data not available.")
 
-    # --- Diabetes proxy (BMI > 30 risky) ---
+    #diabetes (BMI>30 risky)
     bmi = patient_row.get("BMI")
     if pd.notna(bmi):
-        risks["diabetes"] = logistic_risk(bmi, midpoint=30, steepness=0.2)
+        risks["diabetes"] = logistic_risk(bmi, midpoint=24, steepness=0.2)
         explanations.append(f"BMI {bmi:.1f} → Risk {risks['diabetes']:.2f}")
     else:
         risks["diabetes"] = 0.0
         explanations.append("BMI not available.")
 
-    # --- Cardiac risk (HR > 110 risky) ---
+    #cardiac risk (HR>110 risky)
     hr = wearable_row.get("HeartRate")
     if pd.notna(hr):
         risks["cardiac"] = logistic_risk(hr, midpoint=110, steepness=0.07)
@@ -94,7 +93,7 @@ def calculate_risk_scores(patient_row: pd.Series, wearable_row: pd.Series):
         risks["cardiac"] = 0.0
         explanations.append("Heart rate not available.")
 
-    # --- Respiratory risk (SpO₂ < 92 risky, inverted) ---
+    #respiratory risk (SpO2<92 risky, inverted)
     o2 = wearable_row.get("OxygenLevel")
     if pd.notna(o2):
         risks["respiratory"] = logistic_risk(o2, midpoint=92, steepness=0.2, invert=True)
@@ -117,7 +116,6 @@ def explain_anomaly(row: pd.Series) -> str:
             reasons.append("Low activity & poor sleep")
     return ", ".join(reasons) if reasons else "No clear anomaly detected"
 
-# <<< NEW TOOL >>>
 @tool("get_patient_medications", return_direct=True)
 def get_patient_medications_tool(PatientID: str) -> str:
     """
@@ -143,7 +141,6 @@ def get_patient_medications_tool(PatientID: str) -> str:
     except Exception as e:
         return f"Error retrieving medications: {e}"
 
-# <<< CORRECTED TOOL >>>
 @tool("get_lab_results", return_direct=True)
 def get_lab_results_tool(query: str) -> str:
     """
@@ -152,7 +149,7 @@ def get_lab_results_tool(query: str) -> str:
     For example: '8 | Glucose' or '12 | Blood Count'.
     """
     try:
-        # Parse the single input string
+        
         if '|' not in query:
             return "Error: Input for get_lab_results must be in 'PatientID | TestName' format."
         
@@ -181,7 +178,6 @@ def get_lab_results_tool(query: str) -> str:
         return f"Error retrieving lab results: {e}"
 
 
-# <<< CORRECTED TOOL >>>
 @tool("get_encounter_notes", return_direct=True)
 def get_encounter_notes_tool(query: str) -> str:
     """
@@ -190,14 +186,22 @@ def get_encounter_notes_tool(query: str) -> str:
     The EncounterDate must be in 'YYYY-MM-DD' format. For example: '2 | 2025-07-15'.
     """
     try:
-        # Parse the single input string
+        
         if '|' not in query:
             return "Error: Input for get_encounter_notes must be in 'PatientID | EncounterDate' format."
 
-        patient_id_str, encounter_date = [part.strip() for part in query.split('|', 1)]
+        patient_id_str, encounter_date = [part.strip("'\"") for part in query.split('|', 1)]
+
+        # DEBUG: Print the extracted values
+        # print(f"DEBUG - patient_id_str: '{patient_id_str}'")
+        # print(f"DEBUG - encounter_date: '{encounter_date}'")
+        # print(f"DEBUG - encounter_date repr: {repr(encounter_date)}")
+        # print(f"DEBUG - encounter_date length: {len(encounter_date)}")
+
         pid = int(re.findall(r'\d+', patient_id_str)[0])
+        # Additional cleanup for the date
+        encounter_date = encounter_date.strip().strip("'\"")
         
-        # Validate date format before querying
         datetime.strptime(encounter_date, '%Y-%m-%d')
         
         sql_query = text("""
@@ -216,7 +220,6 @@ def get_encounter_notes_tool(query: str) -> str:
     except Exception as e:
         return f"Error retrieving encounter notes: {e}"
     
-# === Tools ===
 @tool("summarize_patient_conditions", return_direct=True)
 def summarize_patient_conditions_tool(condition: str) -> str:
     """
@@ -226,19 +229,18 @@ def summarize_patient_conditions_tool(condition: str) -> str:
     condition = condition.lower().strip("'\" ")
 
     sql_query = ""
-    # This logic now maps to the correct tables and columns from your new schema.
+
     if condition == 'diabetes':
-        # Queries the new Conditions table directly
+
         sql_query = "SELECT COUNT(*) FROM Conditions WHERE `Condition` LIKE '%diabetes%'"
     elif condition == 'hypertension':
-        # Queries the new Conditions table directly
+
         sql_query = "SELECT COUNT(*) FROM Conditions WHERE `Condition` LIKE '%hypertension%'"
     elif condition == 'obese':
-        # Correctly uses the BMI column from the Patients table
+
         sql_query = "SELECT COUNT(*) FROM Patients WHERE BMI > 30"
     elif condition == 'senior':
-        # Calculates age directly from the DOB column in the database
-        # TIMESTAMPDIFF(YEAR, DOB, CURDATE()) is a standard SQL function for age calculation
+
         sql_query = "SELECT COUNT(*) FROM Patients WHERE TIMESTAMPDIFF(YEAR, DOB, CURDATE()) > 65"
     else:
         valid_conditions = ['diabetes', 'hypertension', 'obese', 'senior']
@@ -262,7 +264,6 @@ def risk_score_tool(PatientIDs: str) -> str:
         if not pids:
             return "Please provide at least one valid PatientID."
 
-        # Fetch all patient and wearable data in one go
         patients = pd.read_sql(text("SELECT * FROM Patients WHERE PatientID IN :pids"), engine, params={"pids": pids})
         wearables = pd.read_sql(
             text("""
@@ -340,7 +341,7 @@ def detect_anomalies_tool(PatientIDs: str) -> str:
         
         results = []
         for pid, group in wearables.groupby("PatientID"):
-            if len(group) < 10: # Not enough data to find anomalies
+            if len(group) < 10:
                 results.append(f"--- Anomalies for patient {pid}: Not enough recent data to analyze. ---")
                 continue
 
@@ -387,7 +388,6 @@ def abnormal_patients_tool(limit: str = "10") -> str:
         pts = pd.read_sql(text("SELECT PatientID, Name, BMI FROM Patients"), engine)
         df = latest.merge(pts, on="PatientID", how="left")
 
-        # Flags
         df["HTN"] = (df.get("SystolicBP", pd.Series(dtype='float64')) > 140) | (df.get("DiastolicBP", pd.Series(dtype='float64')) > 90)
         df["LowO2"] = df.get("OxygenLevel", pd.Series(dtype='float64')) < 92
         df["Tachy"] = df.get("HeartRate", pd.Series(dtype='float64')) > 110
