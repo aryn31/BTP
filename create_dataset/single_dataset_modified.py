@@ -15,7 +15,7 @@ np.random.seed(SEED)
 fake = Faker()
 Faker.seed(SEED)
 
-N_PATIENTS = 3000
+N_PATIENTS = 10000
 WEARABLE_DAYS = 14
 START_DATE = datetime.now().date() - timedelta(days=WEARABLE_DAYS)
 
@@ -188,7 +188,7 @@ def generate_dataset(n_patients=N_PATIENTS) -> pd.DataFrame:
 # ----------------------------
 # Export
 # ----------------------------
-def export_csv(df: pd.DataFrame, out_path: str = "./patient_summary.csv"):
+def export_csv(df: pd.DataFrame, out_path: str = "./single_summary.csv"):
     df.to_csv(out_path, index=False)
     print(f"✅ File written: {out_path} ({len(df)} records)")
 
