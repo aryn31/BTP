@@ -6,6 +6,9 @@ import re
 from datetime import datetime, timedelta
 import os
 import math
+from new_test.model import HealthClassifier
+import torch
+import numpy as np
 
 DB_URI = os.getenv("DATABASE_URI", "mysql+pymysql://root:sql_my1country@localhost:3306/BTP")
 engine = create_engine(DB_URI)
@@ -43,6 +46,95 @@ def _normalize_wearable_columns(df: pd.DataFrame) -> pd.DataFrame:
     if "Timestamp" in df.columns:
         df["Timestamp"] = pd.to_datetime(df["Timestamp"], errors="coerce")
     return df
+
+
+
+# Load the Federated Model
+MODEL_PATH = "federated_model.pth"
+net = HealthClassifier()
+try:
+    net.load_state_dict(torch.load(MODEL_PATH))
+    net.eval() # Set to evaluation mode
+    print("🧠 Federated Neural Network loaded successfully.")
+except Exception as e:
+    print(f"⚠️ Warning: Could not load 'federated_model.pth'. {e}")
+    net = None
+
+# Class Mapping (Based on alphabetical order from training)
+LABEL_MAP = {0: "Critical", 1: "Elevated Risk", 2: "High Risk", 3: "Optimal"}
+
+def _clean_patient_ids(patient_ids_str: str):
+    ids = re.findall(r'\d+', patient_ids_str)
+    return [int(id) for id in ids]
+
+@tool("assess_health_category", return_direct=False)
+def assess_health_category_tool(PatientID: str) -> str:
+    """
+    Uses the trained Federated Learning Model to predict risk category.
+    Input: PatientID (e.g. '12')
+    Returns: 'Optimal', 'Elevated Risk', 'High Risk', or 'Critical'
+    """
+    if net is None:
+        return "Error: Federated Model not loaded."
+
+    try:
+        pids = _clean_patient_ids(PatientID)
+        if not pids: return "Invalid Patient ID"
+        pid = pids[0]
+
+        # 1. Fetch Data
+        # We need demographics (Age/BMI) and latest Vitals
+        query = text("""
+            SELECT 
+                p.DOB, 
+                p.BMI, 
+                w.HeartRate_bpm AS HeartRate, 
+                w.SpO2 AS OxygenLevel, 
+                w.BP_Sys AS SystolicBP, 
+                w.BP_Dia AS DiastolicBP, 
+                w.StressLevel
+            FROM Patients p
+            JOIN WearableData w ON p.PatientID = w.PatientID
+            WHERE p.PatientID = :pid
+            ORDER BY w.Timestamp DESC LIMIT 1
+        """)
+        
+        df = pd.read_sql(query, engine, params={"pid": pid})
+        if df.empty: return "No data found for this patient."
+        
+        row = df.iloc[0]
+        
+        # Calculate Age
+        dob = pd.to_datetime(row['DOB'])
+        age = int((datetime.now() - dob).days / 365.25)
+        
+        # 2. Manual Normalization (Approximation)
+        # In a real system, you'd load the specific 'scaler.pkl' from training.
+        # Here we approximate based on medical standard deviations to match the training scale.
+        features = np.array([
+            (age - 50) / 20,                  # Age
+            (float(row['BMI']) - 25) / 5,     # BMI
+            (float(row['HeartRate']) - 80) / 15, # HR
+            (float(row['OxygenLevel']) - 95) / 5, # SpO2
+            (float(row['SystolicBP']) - 120) / 20, # Sys
+            (float(row['DiastolicBP']) - 80) / 10, # Dia
+            (int(row['StressLevel']) - 2) / 1      # Stress
+        ], dtype=np.float32)
+
+        # 3. Inference
+        inputs = torch.tensor(features).unsqueeze(0) # Add batch dimension [1, 7]
+        
+        with torch.no_grad():
+            outputs = net(inputs)
+            _, predicted = torch.max(outputs, 1)
+            category_idx = predicted.item()
+
+        result = LABEL_MAP.get(category_idx, "Unknown")
+        return result
+
+    except Exception as e:
+        return f"Inference Error: {e}"
+
 
 def logistic_risk(x: float, midpoint: float, steepness: float = 0.1, invert: bool = False) -> float:
     """

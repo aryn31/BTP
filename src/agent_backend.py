@@ -13,6 +13,36 @@ engine = create_engine(DB_URI)
 scheduler = BackgroundScheduler()
 scheduler.start()
 
+
+# === Immediate Escalation (For High Risk & Critical) ===
+def direct_escalate_family(alert_id: int, patient_id: int):
+    """
+    IMMEDIATE escalation to family (For High Risk).
+    Skips the waiting period.
+    """
+    with engine.begin() as conn:
+        conn.execute(text("""
+            INSERT INTO AgentFamilyMessages
+            (AlertID, PatientID, Sender, MessageType, Message)
+            VALUES (:aid, :pid, 'Agent', 'ESCALATION', 'High Risk detected. Immediate family notification sent.')
+        """), {"aid": alert_id, "pid": patient_id})
+        
+        print(f"🚨 IMMEDIATE Escalation to Family for Alert {alert_id}")
+
+def direct_escalate_doctor(alert_id: int, patient_id: int, doctor_id: int):
+    """
+    IMMEDIATE escalation to doctor (For Critical).
+    Skips the waiting period and family check.
+    """
+    with engine.begin() as conn:
+        conn.execute(text("""
+            INSERT INTO AgentDoctorMessages
+            (AlertID, PatientID, DoctorID, Sender, MessageType, Message)
+            VALUES (:aid, :pid, :did, 'Agent', 'ESCALATION', 'CRITICAL CONDITION DETECTED. Immediate doctor review required.')
+        """), {"aid": alert_id, "pid": patient_id, "did": doctor_id})
+        
+        print(f"🚑 IMMEDIATE Escalation to Doctor {doctor_id} for Alert {alert_id}")
+
 # === Alert creation ===
 def create_alert(patient_id: int, message: str) -> int:
     """
