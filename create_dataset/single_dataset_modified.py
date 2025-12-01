@@ -1,6 +1,6 @@
 import random
-from datetime import datetime, timedelta, date
-from typing import Dict, List
+from datetime import datetime, timedelta
+from typing import Dict
 
 import numpy as np
 import pandas as pd
@@ -16,186 +16,197 @@ fake = Faker()
 Faker.seed(SEED)
 
 N_PATIENTS = 10000
-WEARABLE_DAYS = 14
-START_DATE = datetime.now().date() - timedelta(days=WEARABLE_DAYS)
-
-# Profiles (same distributions)
-HEALTH_PROFILES = {
-    "Healthy": {"wearable": {"hr_mean": 72, "hr_sd": 6, "spo2_mean": 98.5, "spo2_sd": 0.6,
-                             "bp_sys_mean": 119, "bp_sys_sd": 6, "bp_dia_mean": 78, "bp_dia_sd": 4,
-                             "stress_probs": (0.7, 0.25, 0.05)}},
-    "Diabetic": {"wearable": {"hr_mean": 84, "hr_sd": 7, "spo2_mean": 97.0, "spo2_sd": 0.7,
-                              "bp_sys_mean": 136, "bp_sys_sd": 10, "bp_dia_mean": 88, "bp_dia_sd": 7,
-                              "stress_probs": (0.2, 0.6, 0.2)}},
-    "Cardiac": {"wearable": {"hr_mean": 90, "hr_sd": 10, "spo2_mean": 94.5, "spo2_sd": 1.5,
-                             "bp_sys_mean": 148, "bp_sys_sd": 12, "bp_dia_mean": 96, "bp_dia_sd": 8,
-                             "stress_probs": (0.15, 0.5, 0.35)}},
-    "Obese": {"wearable": {"hr_mean": 86, "hr_sd": 8, "spo2_mean": 96.5, "spo2_sd": 0.9,
-                           "bp_sys_mean": 140, "bp_sys_sd": 10, "bp_dia_mean": 92, "bp_dia_sd": 6,
-                           "stress_probs": (0.25, 0.5, 0.25)}},
-    "Respiratory": {"wearable": {"hr_mean": 82, "hr_sd": 8, "spo2_mean": 93.5, "spo2_sd": 2.0,
-                                 "bp_sys_mean": 132, "bp_sys_sd": 8, "bp_dia_mean": 86, "bp_dia_sd": 6,
-                                 "stress_probs": (0.25, 0.55, 0.20)}},
-    "Elderly": {"wearable": {"hr_mean": 80, "hr_sd": 8, "spo2_mean": 95.0, "spo2_sd": 1.2,
-                             "bp_sys_mean": 142, "bp_sys_sd": 10, "bp_dia_mean": 90, "bp_dia_sd": 6,
-                             "stress_probs": (0.25, 0.55, 0.20)}}
-}
-PROFILE_CHOICES = list(HEALTH_PROFILES.keys())
 
 # ----------------------------
-# Helpers
+# Realism Helpers
 # ----------------------------
 def clamp(x, lo, hi): return max(lo, min(hi, x))
-def rnd_norm_int(mean, sd, lo=None, hi=None):
-    val = int(round(np.random.normal(mean, sd)))
-    return clamp(val, lo, hi) if lo is not None and hi is not None else val
-def rnd_norm_float(mean, sd, lo=None, hi=None, nd=1):
-    val = round(float(np.random.normal(mean, sd)), nd)
-    return clamp(val, lo, hi) if lo is not None and hi is not None else val
-def pick_stress(p_low, p_med, p_high): return np.random.choice([1, 2, 3], p=[p_low, p_med, p_high])
+
+def get_bmi_range(profile):
+    """Returns realistic BMI range based on profile type."""
+    if profile == "Obese": return (30.0, 45.0)
+    if profile == "Athlete": return (19.0, 24.5)
+    if profile == "Malnourished": return (15.0, 18.0)
+    return (18.5, 29.9) # Normal/General
+
+def get_age_range(profile):
+    """Returns realistic Age range based on profile type."""
+    if profile == "Elderly": return (65, 95)
+    if profile == "Athlete": return (18, 40)
+    return (18, 80)
+
+def calculate_bp_by_age_and_profile(age, profile, bmi):
+    """
+    Generates BP that realistically drifts higher with age and BMI.
+    """
+    base_sys = 110
+    base_dia = 70
+    
+    # Age factor: BP tends to rise with age
+    age_factor_sys = (age - 20) * 0.5 
+    age_factor_dia = (age - 20) * 0.2
+
+    # BMI factor: Higher BMI correlates with higher BP
+    bmi_factor = 0
+    if bmi > 25: bmi_factor = (bmi - 25) * 1.5
+
+    # Profile modifiers
+    if profile in ["Hypertensive", "Cardiac", "Diabetic", "Kidney Disease"]:
+        base_sys += 15
+        base_dia += 10
+    
+    # Random fluctuation (noise)
+    noise_sys = np.random.normal(0, 8)
+    noise_dia = np.random.normal(0, 5)
+
+    sys = int(base_sys + age_factor_sys + bmi_factor + noise_sys)
+    dia = int(base_dia + age_factor_dia + (bmi_factor * 0.6) + noise_dia)
+    
+    return clamp(sys, 90, 230), clamp(dia, 60, 140)
 
 # ----------------------------
-# Classification Logic
+# 4-Level Classification Logic (Strict)
 # ----------------------------
-def classify_fitness(age: int, gender: str, bmi: float, hr: int, spo2: float, bp_sys: int, bp_dia: int, stress: int) -> str:
+def classify_health_strict(bmi, hr, spo2, sys, dia, stress):
     """
-    Classifies a patient into Fit / Slightly Unfit / Severe based on
-    age, gender, and physiological parameters.
+    Classifies patient into 4 categories based on strict medical thresholds.
     """
+    
+    # 1. CRITICAL
+    if (spo2 < 90.0) or \
+       (sys >= 180 or dia >= 120) or \
+       (hr > 130 or hr < 40):
+        return "Critical"
 
-    gender = gender.capitalize()
-    # Determine age group
-    if age < 40:
-        group = "18-39"
-    elif age < 60:
-        group = "40-59"
-    else:
-        group = "60+"
+    # 2. HIGH RISK
+    if (spo2 < 94.0) or \
+       (sys >= 140 or dia >= 90) or \
+       (bmi >= 35.0) or \
+       (hr > 110) or \
+       (stress == 3):
+        return "High Risk"
 
-    # Normal reference values
-    norms = {
-        ("18-39", "Male"):  {"bmi": (18.5, 24.9), "hr": (70, 72), "spo2": (95, 100), "bp": (119, 70), "stress": [2]},
-        ("18-39", "Female"):{"bmi": (18.5, 24.9), "hr": (78, 82), "spo2": (95, 100), "bp": (110, 68), "stress": [2, 3]},
-        ("40-59", "Male"):  {"bmi": (18.5, 24.9), "hr": (69, 73), "spo2": (95, 100), "bp": (124, 77), "stress": [2]},
-        ("40-59", "Female"):{"bmi": (18.5, 24.9), "hr": (76, 80), "spo2": (95, 100), "bp": (122, 74), "stress": [2]},
-        ("60+", "Male"):    {"bmi": (22, 26), "hr": (66, 86), "spo2": (93, 100), "bp": (133, 69), "stress": [1, 2]},
-        ("60+", "Female"):  {"bmi": (22, 26), "hr": (66, 90), "spo2": (93, 100), "bp": (139, 68), "stress": [1, 2]},
+    # 3. ELEVATED RISK
+    if (sys >= 120 or dia >= 80) or \
+       (bmi >= 25.0) or \
+       (hr > 100) or \
+       (stress == 2):
+        return "Elevated Risk"
+
+    # 4. OPTIMAL
+    return "Optimal"
+
+# ----------------------------
+# Noise Injection Logic (NEW)
+# ----------------------------
+def add_medical_noise(true_category):
+    """
+    Simulates real-world ambiguity and human error. 
+    15% chance to mislabel a patient as a neighbor category.
+    """
+    # 85% chance to stay correct (Perfect Doctor/Sensor)
+    if random.random() > 0.15: 
+        return true_category
+    
+    # 15% chance to be confused with a neighbor class
+    # (e.g. A doctor might say 138/88 is 'Optimal' instead of 'Elevated' depending on context)
+    neighbors = {
+        "Optimal": ["Elevated Risk"],
+        "Elevated Risk": ["Optimal", "High Risk"],
+        "High Risk": ["Elevated Risk", "Critical"],
+        "Critical": ["High Risk"]
     }
-
-    ref = norms[(group, gender)]
-
-    # small tolerance for biological variance
-    tol_bmi = 1.0
-    tol_hr = 5
-    tol_bp = 10
-    tol_spo2 = 2
-
-    score = 0
-
-    # --- BMI ---
-    if ref["bmi"][0] - tol_bmi <= bmi <= ref["bmi"][1] + tol_bmi:
-        score += 0
-    elif ref["bmi"][0] - 3 <= bmi <= ref["bmi"][1] + 3:
-        score += 1
-    else:
-        score += 2
-
-    # --- Heart Rate ---
-    if ref["hr"][0] - tol_hr <= hr <= ref["hr"][1] + tol_hr:
-        score += 0
-    elif ref["hr"][0] - 10 <= hr <= ref["hr"][1] + 10:
-        score += 1
-    else:
-        score += 2
-
-    # --- SpO2 ---
-    if spo2 >= ref["spo2"][0] - tol_spo2:
-        score += 0
-    elif spo2 >= ref["spo2"][0] - 4:
-        score += 1
-    else:
-        score += 2
-
-    # --- Blood Pressure ---
-    sys_ref, dia_ref = ref["bp"]
-    if (sys_ref - tol_bp <= bp_sys <= sys_ref + tol_bp) and (dia_ref - 5 <= bp_dia <= dia_ref + 5):
-        score += 0
-    elif (sys_ref - 15 <= bp_sys <= sys_ref + 15) or (dia_ref - 10 <= bp_dia <= dia_ref + 10):
-        score += 1
-    else:
-        score += 2
-
-    # --- Stress Level ---
-    if stress in ref["stress"]:
-        score += 0
-    elif stress == 3:
-        score += 1
-    else:
-        score += 2
-
-    # --- Combine score ---
-    if score <= 2:
-        return "Fit"
-    elif score <= 5:
-        return "Slightly Unfit"
-    else:
-        return "Severe"
+    return random.choice(neighbors[true_category])
 
 # ----------------------------
-# Patient generator
+# Patient Generator
 # ----------------------------
+PROFILE_TYPES = [
+    "Healthy", "Athlete", "Sedentary", "Obese", 
+    "Diabetic", "Hypertensive", "Respiratory", "Cardiac", "Elderly"
+]
+
 def generate_patient(pid: int) -> Dict:
-    profile = random.choice(PROFILE_CHOICES)
+    profile = random.choice(PROFILE_TYPES)
     gender = random.choice(["Male", "Female"])
-    dob = fake.date_of_birth(minimum_age=20, maximum_age=90)
+    
+    # 1. Demographics
+    age_min, age_max = get_age_range(profile)
+    dob = fake.date_of_birth(minimum_age=age_min, maximum_age=age_max)
     age = int((datetime.now().date() - dob).days / 365.25)
-    height = rnd_norm_int(170, 9, 150, 195)
-    weight = rnd_norm_int(72, 14, 45, 140)
+
+    # 2. Height/Weight/BMI
+    h_mean = 175 if gender == "Male" else 162
+    height = int(np.random.normal(h_mean, 7))
+    
+    target_bmi_min, target_bmi_max = get_bmi_range(profile)
+    target_bmi = np.random.uniform(target_bmi_min, target_bmi_max)
+    weight = round(target_bmi * ((height / 100) ** 2), 1)
     bmi = round(weight / ((height / 100) ** 2), 1)
 
-    wcfg = HEALTH_PROFILES[profile]["wearable"]
-    hr = rnd_norm_int(wcfg["hr_mean"], wcfg["hr_sd"], 45, 140)
-    spo2 = rnd_norm_float(wcfg["spo2_mean"], wcfg["spo2_sd"], 85, 100, nd=1)
-    sys = rnd_norm_int(wcfg["bp_sys_mean"], wcfg["bp_sys_sd"], 90, 220)
-    dia = rnd_norm_int(wcfg["bp_dia_mean"], wcfg["bp_dia_sd"], 50, 140)
-    stress = pick_stress(*wcfg["stress_probs"])
+    # 3. Vitals
+    if profile == "Athlete":
+        hr = int(np.random.normal(55, 5)) 
+    elif profile in ["Cardiac", "Obese", "Sedentary"]:
+        hr = int(np.random.normal(85, 10))
+    else:
+        hr = int(np.random.normal(72, 8))
+    
+    if profile in ["Respiratory", "Cardiac"]:
+        spo2 = round(np.random.choice(
+            [np.random.uniform(96, 100), np.random.uniform(88, 95)], 
+            p=[0.4, 0.6]
+        ), 1)
+    else:
+        spo2 = round(np.random.uniform(96.0, 100.0), 1)
 
-    fitness_category = classify_fitness(age, gender, bmi, hr, spo2, sys, dia, stress)
+    sys, dia = calculate_bp_by_age_and_profile(age, profile, bmi)
+
+    if profile in ["Hypertensive", "Cardiac"]:
+        stress = np.random.choice([1, 2, 3], p=[0.2, 0.4, 0.4])
+    else:
+        stress = np.random.choice([1, 2, 3], p=[0.6, 0.3, 0.1])
+
+    # 4. Classify (Strict -> Noisy)
+    strict_cat = classify_health_strict(bmi, hr, spo2, sys, dia, stress)
+    final_cat = add_medical_noise(strict_cat)
 
     return {
         "PatientID": pid,
-        "DOB": dob,
+        "ProfileType": profile,
         "Age": age,
         "Gender": gender,
+        "Height_cm": height,
+        "Weight_kg": weight,
+        "BMI": bmi,
         "HeartRate_bpm": hr,
         "SpO2": spo2,
-        "StressLevel": stress,
         "BP_Sys": sys,
         "BP_Dia": dia,
-        "BMI": bmi,
-        "FitnessCategory": fitness_category
+        "StressLevel": stress,
+        "RiskCategory": final_cat # <--- The Noisy Label
     }
 
 # ----------------------------
-# Dataset generator
+# Execution
 # ----------------------------
-def generate_dataset(n_patients=N_PATIENTS) -> pd.DataFrame:
-    patients = [generate_patient(pid) for pid in range(1, n_patients + 1)]
-    df = pd.DataFrame(patients)
-    df["DOB"] = pd.to_datetime(df["DOB"])
-    return df
+def generate_dataset(n=N_PATIENTS) -> pd.DataFrame:
+    patients = [generate_patient(pid) for pid in range(1, n + 1)]
+    return pd.DataFrame(patients)
 
-# ----------------------------
-# Export
-# ----------------------------
-def export_csv(df: pd.DataFrame, out_path: str = "./single_summary.csv"):
-    df.to_csv(out_path, index=False)
-    print(f"✅ File written: {out_path} ({len(df)} records)")
-
-# ----------------------------
-# Run
-# ----------------------------
 if __name__ == "__main__":
     df = generate_dataset(N_PATIENTS)
-    print(df.head())
-    export_csv(df)
+    
+    # Shuffle
+    df = df.sample(frac=1).reset_index(drop=True)
+    
+    print("--- Dataset Sample ---")
+    print(df.head(10))
+    
+    print("\n--- Category Distribution ---")
+    print(df["RiskCategory"].value_counts(normalize=True))
+    
+    # Save
+    out_file = "realistic_health_data_noisy.csv"
+    df.to_csv(out_file, index=False)
+    print(f"\n✅ File saved: {out_file} (With 15% Label Noise)")

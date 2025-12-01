@@ -1,4 +1,3 @@
-# model.py
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -9,7 +8,7 @@ class HealthClassifier(nn.Module):
         super(HealthClassifier, self).__init__()
         # Input: 7 features (Age, BMI, HR, SpO2, Sys, Dia, Stress)
         # Hidden Layer: 16 neurons
-        # Output: 4 classes (Optimal, Elevated, High, Critical)
+        # Output: 4 classes (Critical, Elevated, High, Optimal)
         self.fc1 = nn.Linear(7, 16)
         self.fc2 = nn.Linear(16, 8)
         self.fc3 = nn.Linear(8, 4)
@@ -17,22 +16,29 @@ class HealthClassifier(nn.Module):
     def forward(self, x):
         x = F.relu(self.fc1(x))
         x = F.relu(self.fc2(x))
-        x = self.fc3(x) # No softmax here, CrossEntropyLoss handles it
+        x = self.fc3(x) 
         return x
 
-# 2. Helper to train the model (The "Logic" you asked for)
+# 2. Helper to train the model (NOW WITH PRINT STATEMENTS)
 def train(net, trainloader, epochs):
     criterion = nn.CrossEntropyLoss()
     optimizer = torch.optim.SGD(net.parameters(), lr=0.01, momentum=0.9)
     
+    print(f"   💪 Starting training for {epochs} epochs...") # <--- ADDED
     net.train()
-    for _ in range(epochs):
+    for epoch in range(epochs):
+        running_loss = 0.0
         for images, labels in trainloader:
-            optimizer.zero_grad()         # 1. Clear gradients
-            outputs = net(images)         # 2. Forward pass
-            loss = criterion(outputs, labels) # 3. Calculate Loss
-            loss.backward()               # 4. Backward pass (Gradient calculation)
-            optimizer.step()              # 5. Update weights
+            optimizer.zero_grad()
+            outputs = net(images)
+            loss = criterion(outputs, labels)
+            loss.backward()
+            optimizer.step()
+            running_loss += loss.item()
+        
+        # Calculate average loss for this epoch
+        avg_loss = running_loss / len(trainloader)
+        print(f"      Epoch {epoch+1}/{epochs} | Loss: {avg_loss:.4f}") # <--- ADDED
 
 # 3. Helper to test the model
 def test(net, testloader):
@@ -46,4 +52,6 @@ def test(net, testloader):
             _, predicted = torch.max(outputs.data, 1)
             total += labels.size(0)
             correct += (predicted == labels).sum().item()
+            
+    if len(testloader.dataset) == 0: return 0.0, 0.0
     return loss / len(testloader.dataset), correct / total
