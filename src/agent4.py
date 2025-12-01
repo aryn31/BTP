@@ -10,6 +10,13 @@ from new_test.model import HealthClassifier
 import torch
 import numpy as np
 
+from .agent_backend import (
+    create_alert, 
+    schedule_escalation, 
+    direct_escalate_family, 
+    direct_escalate_doctor
+)
+
 DB_URI = os.getenv("DATABASE_URI", "mysql+pymysql://root:sql_my1country@localhost:3306/BTP")
 engine = create_engine(DB_URI)
 
@@ -67,12 +74,12 @@ def _clean_patient_ids(patient_ids_str: str):
     ids = re.findall(r'\d+', patient_ids_str)
     return [int(id) for id in ids]
 
-@tool("assess_health_category", return_direct=False)
+@tool("assess_health_category", return_direct=True) # return_direct=True allows tool to speak directly
 def assess_health_category_tool(PatientID: str) -> str:
     """
     Uses the trained Federated Learning Model to predict risk category.
+    Use this ONLY when the user explicitly asks to check status, risk, or health category.
     Input: PatientID (e.g. '12')
-    Returns: 'Optimal', 'Elevated Risk', 'High Risk', or 'Critical'
     """
     if net is None:
         return "Error: Federated Model not loaded."
@@ -83,11 +90,9 @@ def assess_health_category_tool(PatientID: str) -> str:
         pid = pids[0]
 
         # 1. Fetch Data
-        # We need demographics (Age/BMI) and latest Vitals
         query = text("""
             SELECT 
-                p.DOB, 
-                p.BMI, 
+                p.DOB, p.BMI, 
                 w.HeartRate_bpm AS HeartRate, 
                 w.SpO2 AS OxygenLevel, 
                 w.BP_Sys AS SystolicBP, 
@@ -105,32 +110,66 @@ def assess_health_category_tool(PatientID: str) -> str:
         row = df.iloc[0]
         
         # Calculate Age
-        dob = pd.to_datetime(row['DOB'])
-        age = int((datetime.now() - dob).days / 365.25)
-        
-        # 2. Manual Normalization (Approximation)
-        # In a real system, you'd load the specific 'scaler.pkl' from training.
-        # Here we approximate based on medical standard deviations to match the training scale.
+        if pd.notna(row['DOB']):
+            dob = pd.to_datetime(row['DOB'])
+            age = int((datetime.now() - dob).days / 365.25)
+        else:
+            age = 50 
+
+        # 2. Extract Values
+        bmi = float(row['BMI']) if pd.notna(row['BMI']) else 22.0
+        hr = float(row['HeartRate']) if pd.notna(row['HeartRate']) else 70.0
+        spo2 = float(row['OxygenLevel']) if pd.notna(row['OxygenLevel']) else 98.0
+        sys_bp = float(row['SystolicBP']) if pd.notna(row['SystolicBP']) else 120.0
+        dia_bp = float(row['DiastolicBP']) if pd.notna(row['DiastolicBP']) else 80.0
+        stress = int(row['StressLevel']) if pd.notna(row['StressLevel']) else 1
+
+        # 3. Normalization & Inference
         features = np.array([
-            (age - 50) / 20,                  # Age
-            (float(row['BMI']) - 25) / 5,     # BMI
-            (float(row['HeartRate']) - 80) / 15, # HR
-            (float(row['OxygenLevel']) - 95) / 5, # SpO2
-            (float(row['SystolicBP']) - 120) / 20, # Sys
-            (float(row['DiastolicBP']) - 80) / 10, # Dia
-            (int(row['StressLevel']) - 2) / 1      # Stress
+            (age - 50) / 20,         
+            (bmi - 25) / 5,
+            (hr - 80) / 15,
+            (spo2 - 95) / 5,
+            (sys_bp - 120) / 20,
+            (dia_bp - 80) / 10,
+            (stress - 2) / 1      
         ], dtype=np.float32)
 
-        # 3. Inference
-        inputs = torch.tensor(features).unsqueeze(0) # Add batch dimension [1, 7]
+        inputs = torch.tensor(features).unsqueeze(0) 
         
         with torch.no_grad():
             outputs = net(inputs)
             _, predicted = torch.max(outputs, 1)
             category_idx = predicted.item()
 
-        result = LABEL_MAP.get(category_idx, "Unknown")
-        return result
+        category = LABEL_MAP.get(category_idx, "Unknown")
+
+        # --- ESCALATION LOGIC (Moved inside the tool) ---
+        response_msg = f"Patient {pid} Status: **{category}**"
+
+        if category == "Optimal":
+            response_msg += " (No action needed)."
+            
+        elif category == "Elevated Risk":
+            msg = "Health Alert: Elevated risk detected. Please take precautions."
+            alert_id = create_alert(pid, msg)
+            schedule_escalation(alert_id, pid, doctor_id=1)
+            response_msg += f"\n- Alert {alert_id} sent to Patient.\n- Doctor escalation scheduled."
+
+        elif category == "High Risk":
+            msg = "URGENT: High Health Risk detected."
+            alert_id = create_alert(pid, msg)
+            direct_escalate_family(alert_id, pid)
+            schedule_escalation(alert_id, pid, doctor_id=1)
+            response_msg += f"\n- 🚨 IMMEDIATE Alert {alert_id} sent to Family.\n- Doctor escalation scheduled."
+
+        elif category == "Critical":
+            msg = "CRITICAL: Emergency assistance required."
+            alert_id = create_alert(pid, msg)
+            direct_escalate_doctor(alert_id, pid, doctor_id=1)
+            response_msg += f"\n- 🚑 CRITICAL Alert {alert_id} escalated directly to Doctor."
+
+        return response_msg
 
     except Exception as e:
         return f"Inference Error: {e}"

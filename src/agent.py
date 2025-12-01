@@ -18,6 +18,7 @@ from .agent4 import (
     risk_score_tool,
     detect_anomalies_tool,
     abnormal_patients_tool,
+    assess_health_category_tool,
 )
 
 DB_URI = os.getenv("DATABASE_URI", "mysql+pymysql://root:sql_my1country@localhost:3306/BTP")
@@ -33,7 +34,7 @@ tools = [
     get_lab_results_tool,
     get_encounter_notes_tool,
     summarize_patient_conditions_tool,
-    risk_score_tool,
+    # risk_score_tool,
     detect_anomalies_tool,
     abnormal_patients_tool,
 ]
@@ -81,48 +82,7 @@ def run_agent(query: str):
     2. Run Federated Model (Assessment Tool).
     3. Execute Logic based on Category (Optimal, Elevated, High, Critical).
     """
-    
-    # 1. Extract Patient ID using Regex (Fastest way)
-    match = re.search(r"patient\s+(\d+)", query, re.IGNORECASE)
-    patient_id = int(match.group(1)) if match else None
 
     # Run the generic LLM response first (to chat with user)
     response = agent.run(query)
-
-    if patient_id:
-        print(f"🔎 Analyzing Patient {patient_id}...")
-        
-        # 2. Call the tool DIRECTLY (Bypassing LLM for the critical logic)
-        # This ensures the logic is deterministic and not subject to LLM hallucinations
-        category = assess_health_category_tool.func(str(patient_id))
-        
-        print(f"🤖 Federated Model Prediction: {category}")
-
-        # 3. Apply the Project Logic
-        if category == "Optimal":
-            print(f"✅ Status Optimal. No action taken.")
-            
-        elif category == "Elevated Risk":
-            # Logic: Alert Patient -> Wait -> Family -> Wait -> Doctor
-            msg = f"Health Alert: Elevated risk detected. Please take medication/rest."
-            alert_id = create_alert(patient_id, msg)
-            schedule_escalation(alert_id, patient_id, doctor_id=1)
-            print(f"⚠️ Elevated Risk: Alert {alert_id} sent to Patient.")
-
-        elif category == "High Risk":
-            # Logic: Alert Patient AND Alert Family IMMEDIATELY
-            msg = f"URGENT: High Health Risk detected."
-            alert_id = create_alert(patient_id, msg)
-            direct_escalate_family(alert_id, patient_id) # <--- Immediate
-            # Still schedule doctor backup if family doesn't respond
-            schedule_escalation(alert_id, patient_id, doctor_id=1) 
-            print(f"🚨 High Risk: Escalated to Family immediately.")
-
-        elif category == "Critical":
-            # Logic: Alert Doctor IMMEDIATELY
-            msg = f"CRITICAL: Emergency assistance required."
-            alert_id = create_alert(patient_id, msg)
-            direct_escalate_doctor(alert_id, patient_id, doctor_id=1) # <--- Immediate
-            print(f"🚑 CRITICAL: Escalated to Doctor immediately.")
-
     return response
