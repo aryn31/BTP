@@ -174,7 +174,6 @@ def assess_health_category_tool(PatientID: str) -> str:
     except Exception as e:
         return f"Inference Error: {e}"
 
-
 def logistic_risk(x: float, midpoint: float, steepness: float = 0.1, invert: bool = False) -> float:
     """
     Logistic risk scoring function.
@@ -330,7 +329,6 @@ def get_encounter_notes_tool(query: str) -> str:
         # print(f"DEBUG - encounter_date length: {len(encounter_date)}")
 
         pid = int(re.findall(r'\d+', patient_id_str)[0])
-        # Additional cleanup for the date
         encounter_date = encounter_date.strip().strip("'\"")
         
         datetime.strptime(encounter_date, '%Y-%m-%d')

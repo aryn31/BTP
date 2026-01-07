@@ -109,7 +109,6 @@ def add_medical_noise(true_category):
         return true_category
     
     # 15% chance to be confused with a neighbor class
-    # (e.g. A doctor might say 138/88 is 'Optimal' instead of 'Elevated' depending on context)
     neighbors = {
         "Optimal": ["Elevated Risk"],
         "Elevated Risk": ["Optimal", "High Risk"],

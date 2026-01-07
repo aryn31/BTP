@@ -6,7 +6,6 @@ from collections import OrderedDict
 from typing import List, Tuple
 from model import HealthClassifier
 
-# --- 1. Metric Aggregation Function ---
 def weighted_average(metrics: List[Tuple[int, dict]]) -> dict:
     """
     Averages the 'accuracy' sent by clients, weighted by the number of examples they have.
@@ -19,7 +18,6 @@ def weighted_average(metrics: List[Tuple[int, dict]]) -> dict:
     # Return global accuracy
     return {"accuracy": sum(accuracies) / sum(examples)}
 
-# --- 2. Custom Strategy to Save Model ---
 class SaveModelStrategy(fl.server.strategy.FedAvg):
     def aggregate_fit(self, server_round, results, failures):
         aggregated_parameters, aggregated_metrics = super().aggregate_fit(server_round, results, failures)
@@ -51,17 +49,16 @@ if __name__ == "__main__":
     initial_params = load_initial_parameters()
     
     strategy = SaveModelStrategy(
-        min_fit_clients=1,       # <--- Change to 1
-        min_available_clients=1, # <--- Change to 1
-        min_evaluate_clients=1,
+        min_fit_clients=2,       
+        min_available_clients=2, 
+        min_evaluate_clients=2,
         fraction_fit=1.0,
         initial_parameters=initial_params,
         
-        # LINK THE METRIC FUNCTION HERE:
         evaluate_metrics_aggregation_fn=weighted_average 
     )
 
-    print("🚀 Starting Federated Server on Port 8080...")
+    print("Starting Federated Server on Port 8080...")
     fl.server.start_server(
         server_address="0.0.0.0:8080", 
         config=fl.server.ServerConfig(num_rounds=10), 

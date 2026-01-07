@@ -2,13 +2,10 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-# 1. Define the Neural Network
 class HealthClassifier(nn.Module):
     def __init__(self):
         super(HealthClassifier, self).__init__()
-        # Input: 7 features (Age, BMI, HR, SpO2, Sys, Dia, Stress)
-        # Hidden Layer: 16 neurons
-        # Output: 4 classes (Critical, Elevated, High, Optimal)
+        #input 7 features (Age, BMI, HR, SpO2, Sys, Dia, Stress)
         self.fc1 = nn.Linear(7, 16)
         self.fc2 = nn.Linear(16, 8)
         self.fc3 = nn.Linear(8, 4)
@@ -19,12 +16,11 @@ class HealthClassifier(nn.Module):
         x = self.fc3(x) 
         return x
 
-# 2. Helper to train the model (NOW WITH PRINT STATEMENTS)
 def train(net, trainloader, epochs):
     criterion = nn.CrossEntropyLoss()
     optimizer = torch.optim.SGD(net.parameters(), lr=0.01, momentum=0.9)
     
-    print(f"   💪 Starting training for {epochs} epochs...") # <--- ADDED
+    print(f"Starting training for {epochs} epochs...") 
     net.train()
     for epoch in range(epochs):
         running_loss = 0.0
@@ -38,9 +34,8 @@ def train(net, trainloader, epochs):
         
         # Calculate average loss for this epoch
         avg_loss = running_loss / len(trainloader)
-        print(f"      Epoch {epoch+1}/{epochs} | Loss: {avg_loss:.4f}") # <--- ADDED
+        print(f"Epoch {epoch+1}/{epochs} | Loss: {avg_loss:.4f}") 
 
-# 3. Helper to test the model
 def test(net, testloader):
     criterion = nn.CrossEntropyLoss()
     correct, total, loss = 0, 0, 0.0
